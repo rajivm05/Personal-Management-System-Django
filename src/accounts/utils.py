@@ -3,13 +3,14 @@ from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
-
+from django.core.mail import send_mail as s_m
 
 def send_mail(to, template, context):
     html_content = render_to_string(f'accounts/emails/{template}.html', context)
     text_content = render_to_string(f'accounts/emails/{template}.txt', context)
 
-    msg = EmailMultiAlternatives(context['subject'], text_content, settings.DEFAULT_FROM_EMAIL, [to])
+    s_m(context['subject'],text_content,settings.EMAIL_HOST_USER,[to],fail_silently=False)
+    msg = EmailMultiAlternatives(context['subject'], text_content, settings.EMAIL_HOST_USER, [to])
     msg.attach_alternative(html_content, 'text/html')
     msg.send()
 

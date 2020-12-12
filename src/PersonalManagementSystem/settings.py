@@ -18,7 +18,7 @@ SECRET_KEY = 'qubhb)ze&e!1mpx2apt4j1l!5-$k#mwvw^l=6cxrca5=sc(hw*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['51f198975681.ngrok.io',]
 
 
 # Application definition
@@ -76,10 +76,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'PersonalManagementSystem.wsgi.application'
 
-EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST_USER='pms.educators@gmail.com'
+EMAIL_HOST= 'smtp.gmail.com'
+EMAIL_PORT=587
+EMAIL_USE_TLS=True
+EMAIL_HOST_PASSWORD="password@2000"
+
 EMAIL_FILE_PATH = os.path.join(CONTENT_DIR, 'tmp/emails')
-EMAIL_HOST_USER = 'test@example.com'
-DEFAULT_FROM_EMAIL = 'test@example.com'
+# EMAIL_HOST_USER = 'rajivmurali2000@gmail.com'
+# DEFAULT_FROM_EMAIL = 'rajivmurali2000@gmail.com'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
