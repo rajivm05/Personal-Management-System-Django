@@ -12,7 +12,7 @@ def send_mail(to, template, context):
     s_m(context['subject'],text_content,settings.EMAIL_HOST_USER,[to],fail_silently=False)
     msg = EmailMultiAlternatives(context['subject'], text_content, settings.EMAIL_HOST_USER, [to])
     msg.attach_alternative(html_content, 'text/html')
-    msg.send()
+    msg.send()  
 
 
 def send_activation_email(request, email, code):

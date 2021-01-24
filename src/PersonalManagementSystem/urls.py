@@ -13,7 +13,7 @@ from django.urls import path, include
 from django.conf.urls.static import static
 
 from main.views import IndexPageView, ChangeLanguageView
-
+from dashboard.views import dashboard_view
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -23,6 +23,7 @@ urlpatterns = [
     path('language/', ChangeLanguageView.as_view(), name='change_language'),
 
     path('accounts/', include('accounts.urls')),
+    path('dashboard/',include('dashboard.urls')),
 ]
 
 if settings.DEBUG:
