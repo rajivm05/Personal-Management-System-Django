@@ -12,7 +12,7 @@
 
     <link rel="icon" href="{% static 'favicon.ico' %}">
 
-    <title>Homepage</title>
+    <title>{%block title %}{% endblock %}</title>
 
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/styles.css' %}" rel="stylesheet">
@@ -28,7 +28,7 @@
 </head>
 
 <body>
-
+{% if request.user.is_authenticated %}
 <nav class="navbar navbar-expand-md navbar-dark bg-dark static-top">
 
     <a class="navbar-brand" href="/">{% trans 'Home' %}</a>
@@ -54,12 +54,7 @@
                 </li>
 
             {% else %}  
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'accounts:log_in' %}">{% trans 'Log in' %}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'accounts:sign_up' %}">{% trans 'Create an account' %}</a>
-                </li>
+            
             {% endif %}
         </ul>
 
@@ -71,7 +66,7 @@
     </div>
 
 </nav>
-
+{% endif %}
 <!-- <div class="container-fluid mt-3"> -->
 
     {% bootstrap_messages %}

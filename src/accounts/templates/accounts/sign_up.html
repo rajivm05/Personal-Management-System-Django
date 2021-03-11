@@ -1,19 +1,53 @@
 {% extends 'layouts/default/page.html' %}
-
 {% load bootstrap4 %}
+{% load static %}	
 {% load i18n %}
+{% block title %}Register{% endblock %}
+
+{%block style%}
+	body
+	{
+		background: url("{%static 'bg_reg.png'%}") ;
+		display:flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.card
+	{
+		box-sizing: border-box;
+	}
+	.card
+	{
+		margin-top: 3%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 35%;
+		background-color:rgba(149,179,171,0.8);
+		border-radius: 50px;
+	}
+	.register h4
+	{
+		text-align: center;
+	}
+	.form-text li:nth-child(1) 
+	{
+	    display:none;
+	}
+	
+{%endblock%}
 
 {% block content %}
 
-    <h4>{% trans 'Create an account' %}</h4>
+    <div class="card">
+	    <form class="register" method="post">	
+    		<h4>{% trans 'Create an account' %}</h4>
 
-    <form method="post">
+	        {% csrf_token %}
+	        {% bootstrap_form form %}
 
-        {% csrf_token %}
-        {% bootstrap_form form %}
+	        <button class="btn btn-success">{% trans 'Create' %}</button>
 
-        <button class="btn btn-success">{% trans 'Create' %}</button>
-
-    </form>
-
+	    </form>
+	</div>
 {% endblock %}

@@ -1,33 +1,364 @@
-{% extends 'layouts/default/page.html' %}
-
+{% load static %}
 {% load bootstrap4 %}
 {% load i18n %}
 
-{% block content %}
+{% get_current_language as language_code %}
 
-    <h4>{% trans 'Log in' %}</h4>
+<!DOCTYPE html>
+<html lang="{{ language_code }}">
+<head>
 
-    <form method="post">
+    <meta charset="utf-8">
 
-        {% csrf_token %}
-        {% bootstrap_form form %}
+    <link rel="icon" href="{% static 'loginIcon.png' %}">
 
-        <button class="btn btn-primary">{% trans 'Log in' %}</button>
+    <title>Log In</title>
 
-    </form>
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- <link href="{% static 'css/styles.css' %}" rel="stylesheet"> -->
+    <style>
+        /** 
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }*/
+        body
+        {
+            background: url("{%static 'bgmirror.png'%}") ;
+            /*background-size: 1707px 818px;*/
+            background-repeat:no-repeat;
+            background-size: cover;
+            /*background-size: contain;*/
+        }
+        container-fluid mt-3 
+        {
+            font-family: "Poppins", sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /*perspective: none;*/
+        }
+        .container 
+        {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card 
+        {
+            /*transform-style: preserve-3d;*/
+            margin-top:25px;
+            min-height: 75vh;
+            width: 32rem;
+            border-radius: 30px;
+            padding: 0rem 3rem;
+            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
+        }
 
-    <hr>
+        .iconclass 
+        {
+            min-height: 35vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .iconclass img 
+        {
+            /*width: 20rem;*/
+            width: 10rem;
+            z-index: 2;
+        }
+        .circle 
+        {
+            width: 15rem;
+            height: 15rem;
+            /*background: linear-gradient(to right, rgba(245, 70, 66, 0.75), rgba(8, 83, 156, 0.75)           );*/
+            position: absolute;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .info h1 
+        {
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .sizes 
+        {
+            display: flex;
+            justify-content: space-between;
+            transition: all 0.75s ease-out;
+        }
 
-    <ul>
-        <li>
-            <a href="{% url 'accounts:restore_password' %}">{% trans 'Forgot your password?' %}</a>
-        </li>
-        <li>
-            <a href="{% url 'accounts:remind_username' %}">{% trans 'Forgot your username?' %}</a>
-        </li>
-        <li>
-            <a href="{% url 'accounts:resend_activation_code' %}">{% trans 'Resend an activation code' %}</a>
-        </li>
-    </ul>
+        /*.sizes a 
+        {
+            padding: 0.5rem 2rem;
+            background: none;
+            border: none;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #585858;
+        }*/
+        /*a.active 
+        {
+            background: #585858;
+            color: white;
+        }*/
+        .jumbotron 
+        {
+            background: url(path/to/image.jpg) fixed center no-repeat;
+            background-size: cover;
+        }
+        .btn
+        {
+            display: block;
+            margin: 0 auto;
+            margin-bottom:15px;
+            width:40%;
+        }
+        #forgotpassword
+        {
+            margin-bottom:10px;   
+        }
+        label
+        {
+            display:none;
+        }
+        label.form-check-label
+        {
+            display:inline-block;
+        }
 
-{% endblock %}
+.area{
+    background: #d2e9f6;  
+    width: 100%;
+    /*height:100vh;*/
+    /*overflow-y: hidden;*/
+   
+}
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(232,155,223, 0.3);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+nav
+{
+    z-index:99999;
+}
+.jumbotron
+{
+    z-index:99999;   
+}
+.container
+{
+    z-index:inherit;
+}
+.card
+{
+    z-index:inherit;
+}
+.iconclass
+{
+    z-index:inherit;
+}
+.login
+{
+    z-index:inherit;
+}
+</style>
+</head>
+
+<body>
+ 
+<!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark static-top"> -->
+
+    <!-- <a class="navbar-brand" href="/">{% trans 'Home' %}</a> -->
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'accounts:log_in' %}">{% trans 'Log in' %}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'accounts:sign_up' %}">{% trans 'Create an account' %}</a>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+<div class="container-fluid mt-3">
+
+    {% bootstrap_messages %}
+    <div class="jumbotron">
+    <div class="container">
+        <div class="card">
+            <div class="iconclass">
+                <div class="circle"></div>
+                <img src="{% static 'loginIcon.png' %}" alt="icon">
+            </div>
+            <div class="info">
+                <h1 class="title">Personal Management System</h1>
+            </div>
+            <br>
+            <div class="login">
+                <form method="post">
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+                    <button class="btn btn-primary">{% trans 'Log in' %}</button>
+                </form>
+            </div>
+            <div class="sizes">
+                    <a href="{% url 'accounts:restore_password' %}" id="forgotpassword">{% trans 'Forgot your password?' %}</a>
+            </div>
+            <!-- <blockquote class="blockquote">
+                <p class="mb-0">“Organizing is a journey, not a destination.”</p>
+                <footer class="blockquote-footer">Anonymous</footer>
+            </blockquote> -->
+        </div>
+    </div>
+    </div>
+
+</div>
+<!-- <div class="area" >
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+        </div > -->
+<script src="{% static 'vendor/jquery/jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'vendor/popper/popper.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+
+<script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
+
+</body>
+</html>

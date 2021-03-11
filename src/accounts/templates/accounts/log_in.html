@@ -25,10 +25,16 @@
         }*/
         body
         {
-            /*background: url("{%static 'ref.png'%}") ;*/
-            /*background-repeat:no-repeat;*/
-            /*background-size: cover;*/
-            background-color:#d2e9f6; 
+            /*background: url("{%static 'bgmirror.png'%}") ;*/
+            /*background-size: 1707px 818px;*/
+            /*background-repeat:no-repeat;
+            background-size: cover;
+            overflow-y:hidden;*/
+            /*background-size: contain;*/
+            /*background-image: url(https://unsplash.com/photos/_Hiv8JKpHzQ);*/
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         container-fluid mt-3 
         {
@@ -41,20 +47,22 @@
         }
         .container 
         {
-            width: 50%;
+            min-width: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        .card 
+        .cardx 
         {
             /*transform-style: preserve-3d;*/
             margin-top:25px;
             min-height: 75vh;
-            width: 32rem;
+            min-width: 32rem;
             border-radius: 30px;
-            padding: 0rem 3rem;
+            padding: 0rem 0rem 0rem 3rem;
+            padding-left:27px;
             box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
+            /*display:inline-block;*/
         }
 
         .iconclass 
@@ -74,7 +82,7 @@
         {
             width: 15rem;
             height: 15rem;
-            background: linear-gradient(to right, rgba(245, 70, 66, 0.75), rgba(8, 83, 156, 0.75)           );
+            /*background: linear-gradient(to right, rgba(245, 70, 66, 0.75), rgba(8, 83, 156, 0.75)           );*/
             position: absolute;
             border-radius: 50%;
             z-index: 1;
@@ -157,7 +165,7 @@
     list-style: none;
     width: 20px;
     height: 20px;
-    background: rgba(232,155,223, 0.3);
+    background: rgba(0,0,0, 0.3);
     animation: animate 25s linear infinite;
     bottom: -150px;
     
@@ -209,18 +217,19 @@
 }
 
 .circles li:nth-child(7){
-    left: 35%;
+    left: 6%;
     width: 150px;
     height: 150px;
     animation-delay: 7s;
+    animation-duration:16s;
 }
 
 .circles li:nth-child(8){
-    left: 50%;
-    width: 25px;
-    height: 25px;
-    animation-delay: 15s;
-    animation-duration: 45s;
+    left: 10%;
+    width: 40px;
+    height: 45px;
+    animation-delay: 0s;
+    animation-duration: 30s;
 }
 
 .circles li:nth-child(9){
@@ -256,44 +265,75 @@
     }
 
 }
-nav
-{
-    z-index:99999;
-}
+
 .jumbotron
 {
     z-index:99999;   
 }
 .container
 {
-    z-index:inherit;
+    z-index:9999999;
 }
-.card
-{
-    z-index:inherit;
-}
+
 .iconclass
 {
-    z-index:inherit;
+    z-index:9999999;
 }
 .login
 {
-    z-index:inherit;
+    z-index:9999999;
 }
+.cardx
+{
+    z-index: 9999999;
+    background-color: #FFFFFF;
+}
+
+.card_left
+{
+    display: inline-block;
+    min-width:22rem;
+    /*flex: 1;*/
+    /*float: left;*/
+    /*width:50%;*/
+    z-index:9999999;
+
+}
+.card_right
+{
+    display: inline-block;
+    /*background-image: url("{% static 'bg_login.jfif' %}");*/
+    min-width: 20rem;
+    float: right;
+    /*width: 50%;*/
+    padding: 0px;
+    z-index:9999999;
+}
+.image_right
+{
+    width: 490px;
+    height: 615px;
+    padding-left:30px;
+    padding-right:0px;
+    margin-right: 0px;
+    border-radius: 0px 30px 30px 0px;
+}
+
+
 </style>
 </head>
 
 <body>
  
-<nav class="navbar navbar-expand-md navbar-dark bg-dark static-top">
+<!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark static-top"> -->
 
     <!-- <a class="navbar-brand" href="/">{% trans 'Home' %}</a> -->
-
+<!-- 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault">
         <span class="navbar-toggler-icon"></span>
-    </button>
+    </button> -->
 
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+<!--     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'accounts:log_in' %}">{% trans 'Log in' %}</a>
@@ -305,35 +345,36 @@ nav
     </div>
 
 </nav>
-
+ -->
 <div class="container-fluid mt-3">
 
     {% bootstrap_messages %}
     <div class="jumbotron">
     <div class="container">
-        <div class="card">
-            <div class="iconclass">
-                <div class="circle"></div>
-                <img src="{% static 'loginIcon.png' %}" alt="icon">
+        <div class="cardx">
+            <div class="card_left">
+                <div class="iconclass">
+                    <a href="/"><img src="{% static 'loginIcon.png' %}" alt="icon"></a>
+                </div>
+                <div class="info">
+                    <h1 class="title">Personal Management System</h1>
+                </div>
+                <br>
+                <div class="login">
+                    <form method="post">
+                        {% csrf_token %}
+                        {% bootstrap_form form %}
+                        <button class="btn btn-primary">{% trans 'Log in' %}</button>
+                    </form>
+                </div>
+                <div class="sizes">
+                        <a href="{% url 'accounts:restore_password' %}" id="forgotpassword">{% trans 'Forgot your password?' %}</a><br>
+                        <a href="{% url 'accounts:sign_up' %}" id="forgotpassword">{% trans 'New User? ' %}</a>
+                </div>
             </div>
-            <div class="info">
-                <h1 class="title">Personal Management System</h1>
+            <div class="card_right">
+                <img class="image_right"src="{% static 'bg_login.jfif' %}" alt="icon">
             </div>
-            <br>
-            <div class="login">
-                <form method="post">
-                    {% csrf_token %}
-                    {% bootstrap_form form %}
-                    <button class="btn btn-primary">{% trans 'Log in' %}</button>
-                </form>
-            </div>
-            <div class="sizes">
-                    <a href="{% url 'accounts:restore_password' %}" id="forgotpassword">{% trans 'Forgot your password?' %}</a>
-            </div>
-            <!-- <blockquote class="blockquote">
-                <p class="mb-0">“Organizing is a journey, not a destination.”</p>
-                <footer class="blockquote-footer">Anonymous</footer>
-            </blockquote> -->
         </div>
     </div>
     </div>
