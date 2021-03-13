@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #My apps
     'dashboard',
+    'todolist',
     # other apps
     'main',
     'accounts',

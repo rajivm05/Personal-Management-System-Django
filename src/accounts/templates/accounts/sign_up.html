@@ -18,13 +18,17 @@
 	}
 	.card
 	{
-		margin-top: 3%;
+		margin-top: 1.5%;
 		display: flex;
+		border:none;
 		align-items: center;
 		justify-content: center;
-		min-width: 35%;
+		min-width: 32%;
+		font-weight:bold;
 		background-color:rgba(149,179,171,0.8);
 		border-radius: 50px;
+		padding: 15px 0px;
+		padding-bottom: 0px;
 	}
 	.register h4
 	{
@@ -34,7 +38,23 @@
 	{
 	    display:none;
 	}
-	
+	a
+	{
+		font-weight:normal;
+		text-align:right;
+	}
+	#gohome
+	{
+		padding: 10px 55px 0px 0px;
+	}
+	#gologin
+	{
+		padding: 10px 0px 0px 55px;
+	}
+	.btn
+	{
+		margin-bottom: 3px;
+	}
 {%endblock%}
 
 {% block content %}
@@ -45,9 +65,10 @@
 
 	        {% csrf_token %}
 	        {% bootstrap_form form %}
-
 	        <button class="btn btn-success">{% trans 'Create' %}</button>
-
 	    </form>
+	    <p>
+	    <a href="/" id="gohome">{% trans 'Go back to Homepage' %}</a>
+	    <a href="{% url 'accounts:log_in' %}" id="gologin">{% trans 'Already a User? ' %}</a></p>
 	</div>
 {% endblock %}

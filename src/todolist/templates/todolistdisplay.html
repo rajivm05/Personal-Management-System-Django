@@ -1,16 +1,27 @@
-{% load static %}
-{% load bootstrap4 %}
-{% load i18n %}
-
-{% get_current_language as language_code %}
 <html lang="en">
-<head>
-    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-    <script src="{% static 'vendor/jquery/jquery-3.4.1.min.js' %}"></script>
-    <script src="{% static 'vendor/popper/popper.min.js' %}"></script>
-    <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
-    <style>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+		<style>
+			.taskDetails
+			{
+				display:none;
+				border:2px solid #000000;
+				max-width:30rem;
+				text-align: center;
+				margin:10px;
+			}
+			.boxes
+			{
+				border:2px solid #000000;
+				margin:20px;
+			}
+			.boxes button
+			{
+				margin:10px;
+			}
+		</style>
+		<style>
         @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
         }
             @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
@@ -26,14 +37,11 @@
             vertical-align: middle;
             font-size:20px;
         }
-
-
         .main-menu:hover,nav.main-menu.expanded 
         {
             width:250px;
             overflow:visible;
         }
-
         .main-menu 
         {
             background:#212121;
@@ -43,26 +51,23 @@
             bottom:0;
             height:100%;
             left:0;
-            width:60px;
-            overflow:hidden;
+            width:250px;
+            /*overflow:hidden;*/
             -webkit-transition:width .05s linear;
             transition:width .05s linear;
             -webkit-transform:translateZ(0) scale(1,1);
             z-index:1000;
         }
-
         .main-menu>ul 
         {
             margin:7px 0;
         }
-
         .main-menu li 
         {
             position:relative;
             display:block;
             width:250px;
         }
-
         .main-menu li>a 
         {
             position:relative;
@@ -75,10 +80,8 @@
             text-decoration:none;
             -webkit-transform:translateZ(0) scale(1,1);
             -webkit-transition:all .1s linear;
-            transition:all .1s linear;
-              
+            transition:all .1s linear;     
         }
-
         .main-menu .nav-icon 
         {
             position:relative;
@@ -89,7 +92,6 @@
             vertical-align:middle;
             font-size:18px;
         }
-
         .main-menu .nav-text 
         {
             position:relative;
@@ -98,30 +100,25 @@
             width:190px;
             font-family: 'Titillium Web', sans-serif;
         }
-
         .main-menu>ul.logout 
         {
             position:absolute;
             left:0;
             bottom:0;
         }
-
         .no-touch .scrollable.hover 
         {
             overflow-y:hidden;
         }
-
         .no-touch .scrollable.hover:hover 
         {
             overflow-y:auto;
             overflow:visible;
         }
-
         a:hover,a:focus 
         {
             text-decoration:none;
         }
-
         nav 
         {
             -webkit-user-select:none;
@@ -130,7 +127,6 @@
             -o-user-select:none;
             user-select:none;
         }
-
         nav ul,nav li 
         {
             outline:0;
@@ -155,14 +151,21 @@
             font-weight: 300;
             src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
         }
-        
-    </style>
-</head>
-<body>
-    <div class="area">
-        <h1>Hello  sh sjdh jsh djhs djhs djh djhs djhs djhs djh sjdh sjdh sjdh sjh </h1>    
-    </div>
-    <nav class="main-menu">
+        .maincontent
+        {
+        	margin-left:15rem;
+        }
+        .formclass
+        {
+        	border:2px solid #000000;
+        	margin-left: 2rem; 
+        	display:none;
+        }
+
+    	</style>
+	</head>
+	<body>
+		<nav class="main-menu">
             <ul>
                 <li>
                     <a href="/">
@@ -263,5 +266,108 @@
                 </li>  
             </ul>
         </nav>
-</body>
+        <div class="maincontent">
+			<div class="boxes">
+				<h3>Academic</h3>
+				{% for task in Academic %}
+						<button type="button" class="" id="{{task.id}}" onclick="fetch(this.id)">{{task.taskName}}</button>
+				{% endfor %}
+				<br>
+				<button type="button" class="addButtons" id="academic_add" onclick="showForm(this.id)">Add Task</button>
+			</div>
+			<div class="boxes">
+				<h3>Personal</h3>
+				{% for task in Personal %}
+						<button type="button" class="" id="{{task.id}}" onclick="fetch(this.id)">{{task.taskName}}</button>
+				{% endfor %}<br>
+				<button type="button" class="addButtons" id="personal_add" onclick="showForm(this.id)">Add Task</button>
+			</div>
+			<div class="boxes">
+				<h3>Administrative</h3>
+				{% for task in Administrative %}
+						<button type="button" class="" id="{{task.id}}" onclick="fetch(this.id)">{{task.taskName}}</button>
+				{% endfor %}<br>
+				<button type="button" class="addButtons" id="administrative_add" onclick="showForm(this.id)">Add Task</button>
+			</div>
+			<div class="boxes">
+				<h3>Research</h3>
+				{% for task in Research %}
+						<button type="button" class="" id="{{task.id}}" onclick="fetch(this.id)">{{task.taskName}}</button>
+				{% endfor %}<br>
+				<button type="button" class="addButtons" id="research_add" onclick="showForm(this.id)">Add Task</button>
+			</div>
+			<div class="taskDetails" id="taskdetailsdiv">
+			</div>
+			<div class="formclass" id="divformclass">
+				<form method="post">{% csrf_token %}
+					{{ form.as_p}}
+					<input type="submit" name="submit" value="Submit" onclick="hideForm()"/>
+					<button type="button"  onclick="hideForm()">Cancel</button>
+				</form>
+			</div>
+		</div> 
+	</body>
 </html>
+<script type="text/javascript">
+	function hideForm()
+	{
+		var div= document.getElementById("divformclass");
+		div.style.display="none";
+	}
+	function showForm(buttonID)
+	{	
+		var div= document.getElementById("divformclass");
+		div.style.display="block";
+		var combobox = document.getElementById("id_taskType");
+		if (buttonID=="research_add")
+		{
+			combobox.selectedIndex=3;
+		}
+		else if (buttonID=="administrative_add")
+		{
+			combobox.selectedIndex=1;
+		}
+		else if (buttonID=="personal_add")
+		{
+			combobox.selectedIndex=2;
+		}
+		else if (buttonID=="academic_add")
+		{
+			combobox.selectedIndex=0;
+		}
+	}
+	function showdescription()
+	{
+		var div= document.getElementById("taskdetailsdiv");
+		console.log(window.getComputedStyle(div));
+		div.style.display="block";
+	}
+	function hidedescription()
+	{
+		var div = document.getElementById("taskdetailsdiv");
+		div.style.display ="none";
+	}
+	function fetch(taskID)
+	{
+		$.getJSON("json/" + taskID, function (items) {
+			taskWindow =  document.getElementById("taskdetailsdiv");
+			items=items[0];
+			console.log(items);
+			fields=items.fields;
+			pk=items.pk;
+			console.log(pk);
+			var taskDate=fields.date_added.slice(0,10);
+			taskWindow.innerHTML = "<label>Task Name:"+fields.taskName+"</label><br>"+"<label>Task Description:"+fields.taskDescription+"</label><br>"+ "<label>Category:"+fields.taskType+"</label><br>"+"<label>Date Added: "+taskDate+"</label><br>"+"<button type='button' onclick='hidedescription()'>Close</button>"+"<button type='button' onclick='deleteItem("+pk+")'>Mark as Completed</button>";
+			taskWindow.style.display="block";
+		});
+
+	}
+	function deleteItem(taskID)
+	{
+		console.log(taskID);
+		button=document.getElementById(taskID);
+		button.parentNode.removeChild(button);
+		hidedescription()
+		$.getJSON("delete/" + taskID, function () {});
+	}
+</script>
