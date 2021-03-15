@@ -99,6 +99,24 @@
 			}
 		},
 		{
+			"file": "src/content/templates/main/index_old.html",
+			"settings":
+			{
+				"buffer_size": 7669,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/content/templates/main/index.html",
+			"settings":
+			{
+				"buffer_size": 10607,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "src/dashboard/templates/dashboard.html",
 			"settings":
 			{
@@ -163,12 +181,12 @@
 	[
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/accounts",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/dashboard",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/dashboard/templates"
 	],
 	"file_history":
 	[
+		"/C/Users/rajiv/Downloads/homepage/index.html",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/accounts/templates/accounts/sign_up.html",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/dashboard/templates/dashboard.html",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content/templates/layouts/default/page.html",
@@ -295,12 +313,11 @@
 		"/C/Users/rajiv/Downloads/watchnext/watchnext/main/forms.py",
 		"/C/Users/rajiv/Downloads/DBSCAN-Algorithm-master/DBSCAN-Algorithm-master/DBSCAN.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/dev/Project_X/src/home/templates/home/base.html",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/dev/Project_X/src/home/templates/home/homepage.html",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/dev/Project_X/src/menu/models.py"
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/dev/Project_X/src/home/templates/home/homepage.html"
 	],
 	"find":
 	{
-		"height": 41.0
+		"height": 29.0
 	},
 	"find_in_files":
 	{
@@ -368,7 +385,7 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 8,
 			"sheets":
 			[
 				{
@@ -396,7 +413,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
@@ -424,7 +441,7 @@
 						"translation.y": 180.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
@@ -452,7 +469,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -477,10 +494,10 @@
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 136.888888889,
+						"translation.y": 137.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -509,7 +526,7 @@
 						"translation.y": 660.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -537,7 +554,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -562,14 +579,74 @@
 							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 6220.88888889,
+						"translation.y": 6180.88888889,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/content/templates/main/index_old.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7669,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4219,
+								4219
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "src/content/templates/main/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10607,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4899,
+								4899
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1740.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 9,
 					"file": "src/dashboard/templates/dashboard.html",
 					"semi_transient": false,
 					"settings":
@@ -581,8 +658,8 @@
 						"selection":
 						[
 							[
-								4508,
-								8038
+								5226,
+								5235
 							]
 						],
 						"settings":
@@ -592,14 +669,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4680.0,
+						"translation.y": 3240.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 10,
 					"file": "src/accounts/views.py",
 					"semi_transient": false,
 					"settings":
