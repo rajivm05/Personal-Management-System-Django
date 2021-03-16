@@ -39,25 +39,7 @@
 			"file": "src/todolist/models.py",
 			"settings":
 			{
-				"buffer_size": 602,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/PersonalManagementSystem/urls.py",
-			"settings":
-			{
-				"buffer_size": 1159,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/todolist/forms.py",
-			"settings":
-			{
-				"buffer_size": 184,
+				"buffer_size": 658,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -66,25 +48,16 @@
 			"file": "src/todolist/views.py",
 			"settings":
 			{
-				"buffer_size": 2609,
+				"buffer_size": 2964,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/accounts/templates/accounts/sign_up.html",
+			"file": "src/PersonalManagementSystem/urls.py",
 			"settings":
 			{
-				"buffer_size": 1343,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/todolist/admin.py",
-			"settings":
-			{
-				"buffer_size": 121,
+				"buffer_size": 1267,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -93,43 +66,25 @@
 			"file": "src/todolist/templates/todolistdisplay.html",
 			"settings":
 			{
-				"buffer_size": 11548,
+				"buffer_size": 23200,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/content/templates/main/index_old.html",
+			"file": "src/todolist/templates/todolist_alternate.html",
 			"settings":
 			{
-				"buffer_size": 7669,
+				"buffer_size": 19754,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/content/templates/main/index.html",
+			"file": "src/todolist/templates/todolistdisplay_old.html",
 			"settings":
 			{
-				"buffer_size": 10607,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/dashboard/templates/dashboard.html",
-			"settings":
-			{
-				"buffer_size": 8054,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/accounts/views.py",
-			"settings":
-			{
-				"buffer_size": 10530,
+				"buffer_size": 11572,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -180,21 +135,35 @@
 	"expanded_folders":
 	[
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/dashboard",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/dashboard/templates"
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src"
 	],
 	"file_history":
 	[
-		"/C/Users/rajiv/Downloads/homepage/index.html",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/accounts/templates/accounts/sign_up.html",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/dashboard/templates/dashboard.html",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content/templates/layouts/default/page.html",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/accounts/templates/accounts/log_in.html",
+		"/C/Users/rajiv/Downloads/contact-form-v16/ContactFrom_v16/index.html",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content/assets/assets/css/style.css",
+		"/C/Users/rajiv/Downloads/colorlib-regform-5/colorlib-regform-5/index.html",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/templates/todolistdisplay_old.html",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/static/sidenavcss.css",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/static/assets/css/style.css",
+		"/C/Users/rajiv/Downloads/bootstrap-sidebar-02/sidebar-02/index.html",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/templates/todolistdisplay_current.html",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/static/nav_assets/scss/style.scss",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/static/nav_assets/css/style.css",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content/templates/main/index.html",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/static/nav2.css",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/static/assets/nav2.js",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/forms.py",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/accounts/views.py",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/views.py",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/dashboard/templates/dashboard.html",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/accounts/templates/accounts/log_in.html",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content/templates/main/index_old.html",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/admin.py",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/accounts/templates/accounts/sign_up.html",
+		"/C/Users/rajiv/Downloads/homepage/index.html",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content/templates/layouts/default/page.html",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/PersonalManagementSystem/settings.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/accounts/models.py",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/accounts/views.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/main/views.py",
 		"/C/Users/rajiv/Downloads/Daraz Free Website Template - Free-CSS.com/daraz/index.html",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/accounts/templates/accounts/log_in2.html",
@@ -297,27 +266,11 @@
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/dev/Project_X/src/searchapp/admin.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/dev/Project_X/src/searchapp/__init__.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/dev/Project_X/src/searchapp/forms.py",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/dev/distance/src/address/forms.py",
-		"/C/Users/rajiv/Downloads/colorlib-search-1/colorlib-search-1/index.html",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/dev/distance/src/address/models.py",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/dev/Project_X/src/register/templates/temp.html",
-		"/C/Users/rajiv/Downloads/watchnext/watchnext/register/templates/registration/login.html",
-		"/C/Users/rajiv/Downloads/watchnext/watchnext/main/templates/main/base.html",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/dev/Project_X/src/register/templates/base.html",
-		"/C/Users/rajiv/Downloads/watchnext/watchnext/register/views.py",
-		"/C/Users/rajiv/Downloads/watchnext/watchnext/register/templates/register.html",
-		"/C/Users/rajiv/Downloads/watchnext/watchnext/register/forms.py",
-		"/C/Users/rajiv/Downloads/watchnext/watchnext/register/models.py",
-		"/C/Users/rajiv/Downloads/watchnext/watchnext/register/apps.py",
-		"/C/Users/rajiv/Downloads/watchnext/watchnext/main/wp_model.py",
-		"/C/Users/rajiv/Downloads/watchnext/watchnext/main/forms.py",
-		"/C/Users/rajiv/Downloads/DBSCAN-Algorithm-master/DBSCAN-Algorithm-master/DBSCAN.py",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/dev/Project_X/src/home/templates/home/base.html",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/dev/Project_X/src/home/templates/home/homepage.html"
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/dev/distance/src/address/forms.py"
 	],
 	"find":
 	{
-		"height": 29.0
+		"height": 31.0
 	},
 	"find_in_files":
 	{
@@ -331,6 +284,19 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			")\n",
+			"low",
+			"medium",
+			"12px",
+			"low",
+			"ow",
+			"high",
+			"high\t",
+			"high",
+			">\n",
+			"rgb",
+			"navbar",
+			"nav",
 			"Cancel",
 			"redirect",
 			">\n",
@@ -375,8 +341,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"navbar_div"
 		],
-		"reverse": false,
+		"reverse": true,
 		"show_context": true,
 		"use_buffer2": true,
 		"whole_word": false,
@@ -385,7 +352,7 @@
 	"groups":
 	[
 		{
-			"selected": 8,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -394,15 +361,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 602,
+						"buffer_size": 658,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								470,
-								470
+								579,
+								579
 							]
 						],
 						"settings":
@@ -413,137 +380,53 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "src/PersonalManagementSystem/urls.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1159,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								979,
-								979
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 180.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/todolist/forms.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 184,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								183,
-								183
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "src/todolist/views.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2609,
+						"buffer_size": 2964,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2605,
-								2605
+								2223,
+								2223
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 137.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "src/accounts/templates/accounts/sign_up.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1343,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1327,
-								1327
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"syntax": "Packages/Python/Python.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 660.0,
+						"translation.y": 832.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "src/todolist/admin.py",
+					"buffer": 2,
+					"file": "src/PersonalManagementSystem/urls.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 121,
+						"buffer_size": 1267,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								121,
-								121
+								1156,
+								1156
 							]
 						],
 						"settings":
@@ -554,24 +437,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 3,
 					"file": "src/todolist/templates/todolistdisplay.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11548,
+						"buffer_size": 23200,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10098,
-								10098
+								6472,
+								6472
 							]
 						],
 						"settings":
@@ -579,27 +462,55 @@
 							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 6180.88888889,
+						"translation.y": 4293.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/todolist/templates/todolist_alternate.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 19754,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15402,
+								14944
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1783.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "src/content/templates/main/index_old.html",
+					"buffer": 5,
+					"file": "src/todolist/templates/todolistdisplay_old.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7669,
+						"buffer_size": 11572,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4219,
-								4219
+								468,
+								468
 							]
 						],
 						"settings":
@@ -609,100 +520,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 6180.0,
+						"translation.y": 506.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "src/content/templates/main/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10607,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4899,
-								4899
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1740.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "src/dashboard/templates/dashboard.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8054,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5226,
-								5235
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3240.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "src/accounts/views.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10530,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								910,
-								910
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -710,7 +531,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 29.0
+		"height": 31.0
 	},
 	"input":
 	{
@@ -747,7 +568,7 @@
 	"project": "PersonalManagementSystem.sublime-project",
 	"replace":
 	{
-		"height": 54.0
+		"height": 58.0
 	},
 	"save_all_on_build": true,
 	"select_file":

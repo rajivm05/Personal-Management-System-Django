@@ -14,7 +14,7 @@ from django.conf.urls.static import static
 
 from main.views import IndexPageView, ChangeLanguageView
 from dashboard.views import dashboard_view
-from todolist.views import CreateToDoListView, taskJson, deleteJson
+from todolist.views import CreateToDoListView, taskJson, deleteJson, markItemAsCompleted
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -29,6 +29,7 @@ urlpatterns = [
     path('todolist/',CreateToDoListView.as_view()),
     path('todolist/json/<int:task>',taskJson,name='taskJson'),
     path('todolist/delete/<int:task>',deleteJson,name='deleteJson'),
+    path('todolist/update/<int:task>',markItemAsCompleted,name='markItemAsCompleted'),
 
 
 ]

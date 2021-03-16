@@ -82,7 +82,8 @@ class LogInView(GuestOnlyView, FormView):
         if url_is_safe:
             return redirect(redirect_to)
 
-        return redirect(settings.LOGIN_REDIRECT_URL)
+        # return redirect(settings.LOGIN_REDIRECT_URL) #Old code, redirects to Homepage after login
+        return redirect('/dashboard/main')    #New page redirects to dashboard after login
 
 
 class SignUpView(GuestOnlyView, FormView):

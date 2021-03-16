@@ -8,6 +8,7 @@ class ToDoList(models.Model):
 	date_added = models.DateTimeField(auto_now_add=True)
 	taskTypes_list = (('Academic','Academic'),('Administrative', 'Administrative'),('Personal','Personal'),('Research','Research'))
 	taskType = models.CharField(max_length=255,choices=taskTypes_list,default='Academic')
-
+	mark_as_complete = models.BooleanField(default=False)
+	
 	def __str__(self):
 		return self.taskName

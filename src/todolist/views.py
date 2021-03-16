@@ -40,7 +40,8 @@ class CreateToDoListView(TemplateView):
 				taskName=taskName,
 				taskDescription=taskDescription,
 				date_added=date_added,
-				taskType=taskType)
+				taskType=taskType,
+				mark_as_complete=False)
 			task.save()
 			current_todo = self.get_current_todolist(request)
 			if current_todo is not None:
@@ -57,7 +58,6 @@ class CreateToDoListView(TemplateView):
 			return response
 	def sortCurrentTodo(self,current_todo):
 		sortedCurrentTodo={'Academic':list([]),'Administrative': list([]),'Personal':list([]),'Research':list([])}
-		print(sortedCurrentTodo)
 		for task in current_todo:
 			sortedCurrentTodo[task.taskType].append(task)
 		return sortedCurrentTodo
@@ -72,6 +72,16 @@ def taskJson(request,task):
 def deleteJson(request,task):
 	if request.user.is_authenticated:
 		deleted=ToDoList.objects.filter(id=task).delete()
+		return HttpResponse('')
+	else:
+		return redirect(settings.LOGIN_REDIRECT_URL)
+def markItemAsCompleted(request,task):
+	if request.user.is_authenticated:
+		response_task=ToDoList.objects.filter(id=task)
+		if response_task[0].mark_as_complete==True:
+			response_task.update(mark_as_complete= False)
+		else:
+			response_task.update(mark_as_complete= True)
 		return HttpResponse('')
 	else:
 		return redirect(settings.LOGIN_REDIRECT_URL)
