@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     #My apps
     'dashboard',
     'todolist',
+    'issues',
     # other apps
     'main',
     'accounts',
