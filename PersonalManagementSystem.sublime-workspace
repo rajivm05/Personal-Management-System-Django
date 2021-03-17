@@ -36,19 +36,10 @@
 	"buffers":
 	[
 		{
-			"file": "src/todolist/models.py",
-			"settings":
-			{
-				"buffer_size": 658,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "src/todolist/views.py",
 			"settings":
 			{
-				"buffer_size": 2964,
+				"buffer_size": 3256,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -57,7 +48,7 @@
 			"file": "src/PersonalManagementSystem/urls.py",
 			"settings":
 			{
-				"buffer_size": 1267,
+				"buffer_size": 1345,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -66,26 +57,25 @@
 			"file": "src/todolist/templates/todolistdisplay.html",
 			"settings":
 			{
-				"buffer_size": 23200,
+				"buffer_size": 25242,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/todolist/templates/todolist_alternate.html",
+			"file": "src/content/static/assets/js/main.js",
 			"settings":
 			{
-				"buffer_size": 19754,
+				"buffer_size": 5819,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/todolist/templates/todolistdisplay_old.html",
+			"file": "src/content/assets/js/ie10-viewport-bug-workaround.js",
 			"settings":
 			{
-				"buffer_size": 11572,
-				"encoding": "UTF-8",
+				"buffer_size": 668,
 				"line_ending": "Windows"
 			}
 		}
@@ -135,14 +125,26 @@
 	"expanded_folders":
 	[
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src"
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content/assets",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content/static",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content/static/assets",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content/static/assets/js",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content/templates",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content/templates/main",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist"
 	],
 	"file_history":
 	[
-		"/C/Users/rajiv/Downloads/contact-form-v16/ContactFrom_v16/index.html",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content/assets/assets/css/style.css",
-		"/C/Users/rajiv/Downloads/colorlib-regform-5/colorlib-regform-5/index.html",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content/assets/assets/js/main.js",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/templates/todolistdisplay_old.html",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/templates/todolist_alternate.html",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/models.py",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/forms.py",
+		"/C/Users/rajiv/Downloads/contact-form-v16/ContactFrom_v16/index.html",
+		"/C/Users/rajiv/Downloads/colorlib-regform-5/colorlib-regform-5/index.html",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/static/sidenavcss.css",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/static/assets/css/style.css",
 		"/C/Users/rajiv/Downloads/bootstrap-sidebar-02/sidebar-02/index.html",
@@ -152,7 +154,6 @@
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content/templates/main/index.html",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/static/nav2.css",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/static/assets/nav2.js",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/forms.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/accounts/views.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/views.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/dashboard/templates/dashboard.html",
@@ -263,14 +264,11 @@
 		"/C/Users/rajiv/OneDrive/Desktop/InterMedia- Results.html",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/dev/Project_X/src/searchapp/templates/error_page.html",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/dev/Project_X/src/searchapp/models.py",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/dev/Project_X/src/searchapp/admin.py",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/dev/Project_X/src/searchapp/__init__.py",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/dev/Project_X/src/searchapp/forms.py",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/dev/distance/src/address/forms.py"
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/dev/Project_X/src/searchapp/admin.py"
 	],
 	"find":
 	{
-		"height": 31.0
+		"height": 43.0
 	},
 	"find_in_files":
 	{
@@ -284,6 +282,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"inner",
+			"innher",
+			"form",
 			")\n",
 			"low",
 			"medium",
@@ -343,7 +344,7 @@
 		[
 			"navbar_div"
 		],
-		"reverse": true,
+		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
 		"whole_word": false,
@@ -352,52 +353,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/todolist/models.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 658,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								579,
-								579
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "src/todolist/views.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2964,
+						"buffer_size": 3256,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2223,
-								2223
+								1641,
+								1641
 							]
 						],
 						"settings":
@@ -406,27 +379,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 832.0,
+						"translation.y": 614.222222222,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 1,
 					"file": "src/PersonalManagementSystem/urls.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1267,
+						"buffer_size": 1345,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1156,
-								1156
+								275,
+								275
 							]
 						],
 						"settings":
@@ -437,93 +410,95 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/todolist/templates/todolistdisplay.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 25242,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14488,
+								14488
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 12172.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "src/todolist/templates/todolistdisplay.html",
+					"file": "src/content/static/assets/js/main.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 23200,
+						"buffer_size": 5819,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6472,
-								6472
+								2950,
+								2950
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4293.0,
+						"translation.y": 2310.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "src/todolist/templates/todolist_alternate.html",
-					"semi_transient": false,
+					"file": "src/content/assets/js/ie10-viewport-bug-workaround.js",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 19754,
+						"buffer_size": 668,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								15402,
-								14944
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1783.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "src/todolist/templates/todolistdisplay_old.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 11572,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								468,
-								468
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 506.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

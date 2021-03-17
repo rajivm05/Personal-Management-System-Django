@@ -353,10 +353,9 @@
 
 
 			margin:12% 25%;
-			border:2px solid #000000;
 			border-radius:20px;
 			padding:25px;
-			box-shadow: 10px 10px;
+			box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
 			position:absolute;
 			width:30%;
 			z-index:99999;
@@ -368,7 +367,6 @@
 			border-bottom:2px solid rgb(149,179,171);
 			margin-bottom:12px;
 			padding-bottom:4px;
-			/*background-color:rgb(149,179,171);*/
 
 		}
 		.mainmenu-icon
@@ -413,6 +411,68 @@
 		.strikethrough
 		{
 			text-decoration:line-through;
+		}
+		.task
+		{
+			min-height:4.5rem;
+		}
+		.formclass input
+		{
+			margin:0.5rem;
+		}
+		.formclass input[type="submit"] {
+		  font-family: "Raleway", sans-serif;
+		  font-weight: 500;
+		  font-size: 14px;
+		  letter-spacing: 1px;
+		  display: inline-block;
+		  padding: 12px 32px;
+		  border-radius: 50px;
+		  transition: 0.5s;
+		  line-height: 1;
+		  margin: 10px;
+		  color: #fff;
+		  -webkit-animation-delay: 0.8s;
+		  animation-delay: 0.8s;
+		  background: rgba(149,179,171,0.8);
+		  border:none;
+		}
+
+		.formclass input[type="submit"]:hover {
+		  background: transparent;
+		  color: rgba(149,179,171,0.8);
+		  text-decoration: none;
+		  border: 2px solid rgba(149,179,171,0.8);
+		}
+		.formclass #cancelbutton
+		{
+			font-family: "Raleway", sans-serif;
+		  font-weight: 500;
+		  font-size: 14px;
+		  letter-spacing: 1px;
+		  display: inline-block;
+		  padding: 12px 32px;
+		  border-radius: 50px;
+		  transition: 0.5s;
+		  line-height: 1;
+		  margin: 10px;
+		  color: #fff;
+		  -webkit-animation-delay: 0.8s;
+		  animation-delay: 0.8s;
+		  background: #ff9292;
+		  border:none;
+		}
+		.formclass #cancelbutton:hover {
+		  background: transparent;
+		  color: rgba(149,179,171,0.8);
+		  text-decoration: none;
+		  border: 2px solid #ff9292;
+		}
+		.formbuttons
+		{
+			display: flex;
+			align-items: center;
+			justify-content: center;
 		}
 	</style>
 	</head>
@@ -534,10 +594,22 @@
         <div class="maincontent">
         	<div class="formpopup" id="formpopup_div">
         		<div class="colorclass">Add Task</div>
-        		<form method="post" class="" autocomplete="off">{% csrf_token %}
+        		<form method="post" class="formclass" autocomplete="off">{% csrf_token %}
 					{{ form.as_p}}
-					<input type="submit" name="submit" value="Submit" onclick="hideForm()"/>
-					<button type="button"  onclick="hideForm()">Cancel</button>
+					<div class="formbuttons">
+						<input type="submit" name="submit" value="Submit" onclick="hideForm()"/>
+						<button type="button" id="cancelbutton" onclick="hideForm()">Cancel</button>
+					</div>
+				</form>
+        	</div>
+        	<div class="formpopup editform" id="editformpopup_div">
+        		<div class="colorclass">Update Task</div>
+        		<form method="get" class="formclass editformclass" autocomplete="off">
+					{{ form.as_p}}
+					<div class="formbuttons editformbuttons">
+						<input type="submit" name="submit" value="Update Task" onclick=""/>
+						<button type="button" id="cancelbutton" onclick="hideForm()">Cancel</button>
+					</div>
 				</form>
         	</div>
         <div class="container bigcontainer page-todo bootstrap snippets bootdeys" id="bigcontainer_div">
@@ -560,7 +632,7 @@
 			                <div class="buttonclass">
 				            	<a href="/todolist" onclick ="deleteItem(this.id)"class="deleteLinks" id="{{task.id}}d"><i class="fa fa-trash" aria-hidden="true"></i></a>
 				            	<a href="/todolist" onclick = "markItemAsCompleted(this.id)" class="markasCompletedLinks"id="{{task.id}}m"><i class="fa fa-check-square-o" aria-hidden="true"></i></a>
-				            	<a href="" class="editLinks"id="{{task.id}}e"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+				            	<a href="#" onclick="editForm(this.id)" class="editLinks"id="{{task.id}}e"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
 			            	</div>
 			            </div>
 			        </div>
@@ -675,6 +747,7 @@
 	}
 	function fetch(taskID)
 	{
+
 		$.getJSON("json/" + taskID, function (items) {
 			taskWindow =  document.getElementById("taskdetailsdiv");
 			items=items[0];
@@ -706,34 +779,40 @@
 		console.log(tempScrollTop);
 		$.getJSON("update/" + actual_taskID, function () {});
 	}
-	// function editForm(taskID)
-	// {	
-	// 	actual_taskID = taskID.slice(0,taskID.length-1);
-	// 	$.getJSON("json/" + actual_taskID, function (items) {
-	// 		var div= document.getElementById("formpopup_div");
-	// 		var combobox = document.getElementById("id_taskType");
-						
+	function editForm(taskID)
+	{	
+		actual_taskID = taskID.slice(0,taskID.length-1);
+		$.getJSON("edit/" + actual_taskID, function (items) {
+			var div= document.getElementById("editformpopup_div");
+			var form=div.childNodes[3];
+			for (var i=0; i<form.childNodes.length; i++)
+			{
+				// if form.childNodes[i].tagName =="input"
+				// {
+				// 	console.log(form.childNodes[i])
+				// }
+			}
+			// var combobox = document.getElementById("id_taskType");
+			div.style.display="block";
 
-	// 		div.style.display="block";
-
-	// 	});
-	// 	if (buttonID=="research_add")
-	// 	{
-	// 		combobox.selectedIndex=3;
-	// 	}
-	// 	else if (buttonID=="administrative_add")
-	// 	{
-	// 		combobox.selectedIndex=1;
-	// 	}
-	// 	else if (buttonID=="personal_add")
-	// 	{
-	// 		combobox.selectedIndex=2;
-	// 	}
-	// 	else if (buttonID=="academic_add")
-	// 	{
-	// 		combobox.selectedIndex=0;
-	// 	}
-	// 	var bigcontainer = document.getElementById("bigcontainer_div");
-	// 	bigcontainer.style.opacity=0.4;
-	// }
+		});
+		// if (buttonID=="research_add")
+		// {
+		// 	combobox.selectedIndex=3;
+		// }
+		// else if (buttonID=="administrative_add")
+		// {
+		// 	combobox.selectedIndex=1;
+		// }
+		// else if (buttonID=="personal_add")
+		// {
+		// 	combobox.selectedIndex=2;
+		// }
+		// else if (buttonID=="academic_add")
+		// {
+		// 	combobox.selectedIndex=0;
+		// }
+		var bigcontainer = document.getElementById("bigcontainer_div");
+		bigcontainer.style.opacity=0.4;
+	}
 </script>

@@ -85,6 +85,13 @@ def markItemAsCompleted(request,task):
 		return HttpResponse('')
 	else:
 		return redirect(settings.LOGIN_REDIRECT_URL)
-
+def editTask(request,task):
+	if request.user.is_authenticated:
+		taskObj =ToDoList.objects.filter(id=task)
+		jsonitems = serializers.serialize("json",taskObj)
+		jsonitems = json.loads(jsonitems)
+		return JsonResponse(jsonitems,safe=False)
+	else:
+		return redirect(settings.LOGIN_REDIRECT_URL)
 
 
