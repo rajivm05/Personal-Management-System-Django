@@ -35,33 +35,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "src/todolist/views.py",
-			"settings":
-			{
-				"buffer_size": 3256,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/PersonalManagementSystem/urls.py",
-			"settings":
-			{
-				"buffer_size": 1345,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/todolist/templates/todolistdisplay.html",
-			"settings":
-			{
-				"buffer_size": 25331,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -113,23 +86,38 @@
 	[
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content/assets",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content/templates",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content/templates/main",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist"
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/passwords",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/passwords/static",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/passwords/templates"
 	],
 	"file_history":
 	[
-		"/C/Users/rajiv/AppData/Roaming/Sublime Text 3/Packages/Print to HTML/Print to HTML.sublime-settings",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/passwords/forms.py",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/PersonalManagementSystem/urls.py",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/passwords/templates/passworddisplay.html",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/passwords/views.py",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/passwords/models.py",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/models.py",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/passwords/templates/passworddisplay_currentWorking.html",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/passwords/templates/passworddisplay_alternate_1.html",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/templates/todolistdisplay.html",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/passwords/static/style.css",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content/templates/main/index.html",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/passwords/assets/style.css",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/dashboard/templates/dashboard.html",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/forms.py",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/issues/views.py",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/passwords/admin.py",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/PersonalManagementSystem/settings.py",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/issues/models.py",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/manage.py",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/views.py",
+		"/C/Users/rajiv/AppData/Roaming/Sublime Text 3/Packages/Print to HTML/Print to HTML.sublime-settings",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content/static/assets/js/main.js",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content/assets/assets/css/style.css",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content/assets/assets/js/main.js",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/templates/todolistdisplay_old.html",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/templates/todolist_alternate.html",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/models.py",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/forms.py",
 		"/C/Users/rajiv/Downloads/contact-form-v16/ContactFrom_v16/index.html",
 		"/C/Users/rajiv/Downloads/colorlib-regform-5/colorlib-regform-5/index.html",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/static/sidenavcss.css",
@@ -141,15 +129,12 @@
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/static/nav2.css",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/static/assets/nav2.js",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/accounts/views.py",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/views.py",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/dashboard/templates/dashboard.html",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/accounts/templates/accounts/log_in.html",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content/templates/main/index_old.html",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/admin.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/accounts/templates/accounts/sign_up.html",
 		"/C/Users/rajiv/Downloads/homepage/index.html",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content/templates/layouts/default/page.html",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/PersonalManagementSystem/settings.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/accounts/models.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/main/views.py",
 		"/C/Users/rajiv/Downloads/Daraz Free Website Template - Free-CSS.com/daraz/index.html",
@@ -165,7 +150,6 @@
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/dashboard/urls.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/dashboard/views.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/accounts/urls.py",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/PersonalManagementSystem/urls.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/animationTest.html",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/homeapp/views.py",
 		"/C/Users/rajiv/AppData/Roaming/Sublime Text 3/Packages/TabNine/Default.sublime-keymap",
@@ -187,7 +171,6 @@
 		"/C/Users/rajiv/Downloads/3d-card-effect-master/style.css",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/accounts/templates/accounts/log_out.html",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/accounts/utils.py",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/manage.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System-Final/src/PersonalManagmentSystem/settings.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System-Final/src/PersonalManagmentSystem/urls.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/simple-django-login-and-register/source/app/urls.py",
@@ -236,23 +219,11 @@
 		"/C/xampp/htdocs/check.php",
 		"/C/xampp/htdocs/q4php.php",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/FINAL EXAM STUFF/q4.html",
-		"/C/xampp/htdocs/index.php",
-		"/C/xampp/htdocs/compute.php",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/Labs/Experiment 5/lab4css.css",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/Labs/Experiment 5/lab4.html",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/Labs/Experiment 6/form_validation.html",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/Labs/Experiment 6/exp6.html",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/Labs/Experiment 4_2/lab4css.css",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/Labs/Experiment 4_2/lab4.html",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/Labs/Experiment 4_2/register.html",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/Labs/Experiment 4/lab3css.css",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/Labs/Experiment 4/lab3.html",
-		"/C/Users/rajiv/OneDrive/Desktop/InterMedia- Results.html",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/dev/Project_X/src/searchapp/templates/error_page.html"
+		"/C/xampp/htdocs/index.php"
 	],
 	"find":
 	{
-		"height": 31.0
+		"height": 61.0
 	},
 	"find_in_files":
 	{
@@ -266,6 +237,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"\t\t\n",
+			"cancel",
+			"li",
+			"text-ali",
+			"body",
+			"if icon.classList.contains(\"fa-eye\")\n\t\t// {\n\t\t// \ticon.classList.add(\"fa-eye-slash\");\n\t\t// \ticon.classList.remove(\"fa-eye\");\n\t\t// }\n\t\t// else\n\t\t// {\n\t\t// \ticon.classList.add(\"fa-eye\");\n\t\t// \ticon.classList.remove(\"fa-eye-slash\");\n\n\t\t// }",
+			"body",
+			"clearfix",
+			"body",
+			".body",
+			"password",
+			"passwords",
 			"inner",
 			"innher",
 			"form",
@@ -337,100 +320,14 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "src/todolist/views.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3256,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3023,
-								3023
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1259.11111111,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/PersonalManagementSystem/urls.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1345,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								275,
-								275
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 600.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/todolist/templates/todolistdisplay.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 25331,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								22813,
-								22813
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 14000.8888889,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 31.0
+		"height": 61.0
 	},
 	"input":
 	{
@@ -467,7 +364,7 @@
 	"project": "PersonalManagementSystem.sublime-project",
 	"replace":
 	{
-		"height": 58.0
+		"height": 54.0
 	},
 	"save_all_on_build": true,
 	"select_file":
