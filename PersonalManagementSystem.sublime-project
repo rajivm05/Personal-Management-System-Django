@@ -3,6 +3,9 @@
 	[
 		{
 			"path": "."
+		},
+		{
+			"path": "C:\\Users\\rajiv\\OneDrive\\Desktop\\Notes\\Sem-6\\Software Engineering\\Project\\django-schedule-master\\django-schedule-master"
 		}
 	]
 }

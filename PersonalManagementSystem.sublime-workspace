@@ -35,125 +35,6 @@
 	},
 	"buffers":
 	[
-		{
-<<<<<<< HEAD
-			"file": "src/issues/views.py",
-			"settings":
-			{
-				"buffer_size": 3179,
-=======
-			"file": "src/PersonalManagementSystem/urls.py",
-			"settings":
-			{
-				"buffer_size": 1794,
->>>>>>> 3d36fadf3ff11af206de61daf368d386d1be859a
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-<<<<<<< HEAD
-			"file": "src/issues/templates/issues.html",
-			"settings":
-			{
-				"buffer_size": 21687,
-=======
-			"file": "src/schedules/models.py",
-			"settings":
-			{
-				"buffer_size": 672,
->>>>>>> 3d36fadf3ff11af206de61daf368d386d1be859a
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-<<<<<<< HEAD
-			"file": "/C/Users/HP/Desktop/card.html",
-			"settings":
-			{
-				"buffer_size": 17719,
-=======
-			"file": "src/schedules/views.py",
-			"settings":
-			{
-				"buffer_size": 1433,
->>>>>>> 3d36fadf3ff11af206de61daf368d386d1be859a
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-<<<<<<< HEAD
-			"file": "src/content/templates/main/index.html",
-			"settings":
-			{
-				"buffer_size": 10651,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/PersonalManagementSystem/urls.py",
-			"settings":
-			{
-				"buffer_size": 1713,
-=======
-			"file": "src/schedules/templates/scheduledisplay.html",
-			"settings":
-			{
-				"buffer_size": 16882,
->>>>>>> 3d36fadf3ff11af206de61daf368d386d1be859a
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/schedules/forms.py",
-			"settings":
-			{
-				"buffer_size": 548,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/passwords/views.py",
-			"settings":
-			{
-				"buffer_size": 2216,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/passwords/templates/passworddisplay.html",
-			"settings":
-			{
-<<<<<<< HEAD
-				"buffer_size": 25331,
-=======
-				"buffer_size": 23152,
-				"encoding": "UTF-8",
->>>>>>> 3d36fadf3ff11af206de61daf368d386d1be859a
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/passwords/forms.py",
-			"settings":
-			{
-				"buffer_size": 417,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "<models.py>\nfrom django.db import models\nfrom django.contrib.auth.models import User\n\n# Create your models here.\nclass Schedules(models.Model):\n\tuser = models.ForeignKey(User,on_delete=models.CASCADE)\n\teventName = models.CharField(max_length=255, blank=False)\n\teventDate = models.DateField(auto_now=False, auto_now_add=False,blank=True)\n\teventTime = models.TimeField(auto_now=False, blank=True,auto_now_add=False)\n\teventDuration = models.TimeField(auto_now=False, auto_now_add=False)\n\teventTypes_list = (('Academic','Academic'),('Administrative', 'Administrative'),('Personal','Personal'),('Research','Research'))\n\teventType = models.CharField(max_length=255,choices=eventTypes_list,default='Academic')\n\n\tdef __str__(self):\n\t\treturn self.eventName\n</models.py>\n\n<forms.py>\nfrom .models import Schedules\nfrom django.forms import ModelForm\nfrom django.db import models\nfrom django import forms\n\nclass ScheduleForm(ModelForm):\n\tclass Meta:\n\t\tmodel = Schedules\n\t\tfields = ['eventName','eventDate','eventTime','eventDuration','eventType']\n\t\tlabels = {\n\t\t\t'eventName':'Name of event',\n\t\t\t'eventDate':'Date of event',\n\t\t\t'eventTime':'Time of event',\n\t\t\t'eventDuration':'Duration of Event',\n\t\t\t'eventType':'Type of event'\n\t\t}\n\t\t# widgets={\n\t\t# \t'eventDateTime':forms.DateTimeInput(),\n\t\t# \t'eventDuration':forms.TimeInput(),\n\t\t# }\n</forms.py>\n<views.py>\nfrom django.shortcuts import render\nfrom .models import Schedules\nfrom django.contrib.auth import authenticate\nfrom .forms import ScheduleForm\nfrom django.views.generic import View, FormView, TemplateView\nfrom django.utils import timezone\nfrom django.utils import http\nfrom django.shortcuts import redirect\nfrom django.conf import settings\nfrom django.core import serializers\nimport json\nfrom django.http import JsonResponse, HttpResponse\n# Create your views here.\n\nclass ScheduleView(TemplateView):\n\tdef get(self, request):\n\t\tif request.user.is_authenticated:\n\t\t\tcontext = {}\n\t\t\tform = ScheduleForm\n\t\t\tcontext['form'] = form\n\t\t\treturn render(request,'scheduledisplay.html',context)\n\t\telse:\n\t\t\treturn redirect(settings.LOGIN_REDIRECT_URL)\n\tdef post(self, request):\n\t\tif request.user.is_authenticated:\n\t\t\tform = ScheduleForm(request.POST)\n\t\t\tcontext={}\n\t\t\tif form.isValid():\n\t\t\t\teventName = request.POST.get('eventName')\n\t\t\t\teventDateTime = request.POST.get('eventDateTime')\n\t\t\t\teventDuration = request.POST.get('eventDuration')\n\t\t\t\teventType = request.POST.get('eventType')\n\t\t\t\tuser = request.user\n\t\t\t\tschedule = Schedules(user=user,eventName=eventName,\n\t\t\t\t\teventDateTime=eventDateTime,\n\t\t\t\t\teventDuration=eventDuration,\n\t\t\t\t\teventType=eventType)\n\t\t\t\tschedule.save()\n\t\t\t\tform = ScheduleForm()\n\t\t\t\tcontext['form']=form\n\t\t\t\treturn  render(request,'scheduledisplay.html',context)\n\t\telse:\n\t\t\treturn redirect(settings.LOGIN_REDIRECT_URL)\n</views.py>\n<Scheduledisplay.html>\n{% load static %}\n<html lang=\"en\">\n\t<head>\n\t\t<meta charset=\"utf-8\">\n\t\t<meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\">\n\n\t\t<title>Passwords</title>\n\t\t<meta content=\"\" name=\"description\">\n\t\t<meta content=\"\" name=\"keywords\">\n\n\t\t<script src=\"https://code.jquery.com/jquery-3.1.1.min.js\"\n        integrity=\"sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=\" crossorigin=\"anonymous\"></script>\n\n\t\t<!-- Favicons -->\n\t\t<!-- <link href=\"{% static 'assets/img/favicon.png'%}\" rel=\"icon\"> -->\n\t\t<!-- <link href=\"{% static 'assets/img/apple-touch-icon.png'%}\" rel=\"apple-touch-icon\"> -->\n\n\t\t<!-- Google Fonts -->\n\t\t<link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i\" rel=\"stylesheet\">\n\n\t\t<!-- Vendor CSS Files -->\n\t\t<link href=\"{% static 'assets/vendor/animate.css/animate.min.css'%}\" rel=\"stylesheet\">\n\t\t<link href=\"{% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%}\" rel=\"stylesheet\">\n\t\t<link href=\"{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%}\" rel=\"stylesheet\">\n\t\t<link href=\"{% static 'assets/vendor/boxicons/css/boxicons.min.css'%}\" rel=\"stylesheet\">\n\t\t<link href=\"{% static 'assets/vendor/glightbox/css/glightbox.min.css'%}\" rel=\"stylesheet\">\n\t\t<link href=\"{% static 'assets/vendor/swiper/swiper-bundle.min.css'%}\" rel=\"stylesheet\">\n\t\t<!-- New nav files -->\n\t\t<link href=\"https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900\" rel=\"stylesheet\">\n\t\t\n\t\t<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\n\t\t<!-- <link rel=\"stylesheet\" href=\"{% static 'nav_assets/css/style.css'%}\"> -->\n\t\t<!-- Template Main CSS File -->\n\t\t<link href=\"{% static 'assets/css/style.css''%}\" rel=\"stylesheet\">\n\t\t\n\t\t<!-- CSS for Top nav -->\n\t\t<style type=\"text/css\">\n\t\t\t@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);\n\t\t\t.welcomeback\n\t\t\t{\n\t\t\t\tfont-size:20px !important;\n\t\t\t\tmargin-right: 0px;\n\t\t\t}\n\t\t\t.fa-2x {\n            \tfont-size: 1em !important;\n            \tpadding-right:3px !important;\n            }\n            .welcomeback\n            {\n            \tcolor:#545454 !important;\n            }\n            #problematic_a\n            {\n            \tpadding-left:115px !important;\n            }\n            #problematic_columnheader\n            {\n            \tpadding-left:7.6rem !important;\n            }\n\t\t</style>\n\t\t<!-- CSS for side nav -->\n\t\t<style>\n        @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);\n        }\n            @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);\n            .fa-2x {\n            font-size: 2em;\n            }\n            .fa {\n            position: relative;\n            display: table-cell;\n            width: 60px;\n            height: 36px;\n            text-align: center;\n            vertical-align: middle;\n            font-size:20px;\n        }\n        .main-menu:hover,nav.main-menu.expanded \n        {\n            width:220px;\n            overflow:visible;\n        }\n        .main-menu \n        {\n            background:#212121;\n            border-right:1px solid #e5e5e5;\n            position:absolute;\n            top:0;\n            bottom:0;\n            height:100%;\n            left:0;\n            width:220px;\n            /*overflow:hidden;*/\n            -webkit-transition:width .05s linear;\n            transition:width .05s linear;\n            -webkit-transform:translateZ(0) scale(1,1);\n            z-index:1000;\n        }\n        .main-menu>ul \n        {\n            margin:7px 0;\n        }\n        .main-menu li \n        {\n            position:relative;\n            display:block;\n            width:220px;\n        }\n        .main-menu li>a \n        {\n            position:relative;\n            display:table;\n            border-collapse:collapse;\n            border-spacing:0;\n            color:#999;\n             font-family: arial;\n            font-size: 14px;\n            text-decoration:none;\n            -webkit-transform:translateZ(0) scale(1,1);\n            -webkit-transition:all .1s linear;\n            transition:all .1s linear;     \n        }\n        .main-menu .nav-icon \n        {\n            position:relative;\n            display:table-cell;\n            width:60px;\n            height:36px;\n            text-align:center;\n            vertical-align:middle;\n            font-size:18px;\n        }\n        .main-menu .nav-text \n        {\n            position:relative;\n            display:table-cell;\n            vertical-align:middle;\n            width:190px;\n            font-family: 'Titillium Web', sans-serif;\n        }\n        .main-menu>ul.logout \n        {\n            position:absolute;\n            left:0;\n            bottom:0;\n        }\n        .no-touch .scrollable.hover \n        {\n            overflow-y:hidden;\n        }\n        .no-touch .scrollable.hover:hover \n        {\n            overflow-y:auto;\n            overflow:visible;\n        }\n        a:hover,a:focus \n        {\n            text-decoration:none;\n        }\n        nav \n        {\n            -webkit-user-select:none;\n            -moz-user-select:none;\n            -ms-user-select:none;\n            -o-user-select:none;\n            user-select:none;\n            /*height:100%;*/\n        }\n\n        nav ul,nav li \n        {\n            outline:0;\n            margin:0;\n            padding:0;\n        }\n        .main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a \n        {\n            color:#fff;\n            background-color:#5fa2db;\n        }\n        .area \n        {\n            margin-left:3.7rem;\n            background-color:#d2e9f6; \n            height: 100%;\n        }\n        @font-face \n        {\n            font-family: 'Titillium Web';\n            font-style: normal;\n            font-weight: 300;\n            src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');\n        }\n    \t</style>\n    \t<!-- main content style -->\n    \t<style>\n    \t.maincontent\n        {\n        \tmargin-left:15rem;\n        \tmargin-top:1.5rem;\n        }\n\n\t\t.page-todo .tasks \n\t\t{\n\t\t    background: #fff;\n\t\t    padding: 0;\n\t\t    border-right: 1px solid #d1d4d7;\n\t\t    margin: -30px 15px -30px -15px\n\t\t}\n\n\t\t.page-todo .task-list {\n\t\t    padding: 30px 15px;\n\t\t    min-height: 100%\n\t\t}\n\n\n\t\t.page-todo .task {\n\t\t    border-bottom: 1px solid #e4e5e6;\n\t\t    margin-bottom: 1px;\n\t\t    position: relative\n\t\t}\n\n\t\t.page-todo .task .desc {\n\t\t    display: inline-block;\n\t\t    width: 75%;\n\t\t    padding: 10px 10px;\n\t\t    font-size: 14px\n\t\t}\n\n\t\t.page-todo .task .desc .title {\n\t\t    font-size: 18px;\n\t\t    margin-bottom: 5px\n\t\t}\n\n\t\t.page-todo .task .time {\n\t\t    display: inline-block;\n\t\t    width: 15%;\n\t\t    padding: 10px 10px 10px 0;\n\t\t    font-size: 12px;\n\t\t    text-align: right;\n\t\t    position: absolute;\n\t\t    top: 0;\n\t\t    right: 0\n\t\t}\n\n\t\t.page-todo .task .time .date {\n\t\t    font-size: 18px;\n\t\t    margin-bottom: 5px\n\t\t}\n\n\t\t.page-todo .task.last {\n\t\t    border-bottom: 1px solid transparent\n\t\t}\n\n\t\t.page-todo .task.high {\n\t\t    border-left: 2px solid #f86c6b\n\t\t}\n\n\t\t.page-todo .task.medium {\n\t\t    border-left: 2px solid #ff97b7\n\t\t}\n\n\t\t.page-todo .task.low {\n\t\t    border-left: 2px solid #4895ef;\n\n\t\t}\t\n\t\t.page-todo .task.verylow {\n\t\t    border-left: 2px solid #4dbd74\n\n\t\t}\t\n\t\t.bigcontainer\n\t\t{\n\t\t\toverflow-y: scroll;\n\t\t\tmax-height:85%;\n\t\t\t/*needs to be done when the add task form is active*/\n\t\t\t/*opacity:0.4;*/\n\t\t}\n\t\tbody\n\t\t{\n\t\t\t/*overflow: hidden;*/\n\t\t}\n\t\th1\n\t\t{\n\t\t\t/*font-family: poppins;*/\n\t\t\tfont-size: 26px;\n\t\t\tfont-weight: bold;\n\t\t}\n\t\t.page-todo .priority.verylow {\n\t\t    background: #4dbd74;\n\t\t}\n\n\t\t.page-todo .priority.verylow span {\n\t\t    background: #4dbd74;\n\t\t}\n\t\t.addtask\n\t\t{\n\t\t\tfloat: right;\n\t\t}\n\t\t.addtask button\n\t\t{\n\t\t\tbox-sizing: border-box;\n\t\t\tborder: none;\n\t\t\tpadding:0px;\n\t\t\tbackground:transparent;\n\t\t\tfont-size:inherit;\n\t\t\tfont-weight:inherit;\n\t\t\tfont-family:inherit;\n\t\t\tcolor:#fff;\n\t\t}\n\t\t.formpopup\n\t\t{\n\t\t\t/*Needs to be none by default, use js to change the display*/\n\t\t\tdisplay: none;\n\n\n\t\t\tmargin:12% 25%;\n\t\t\tborder-radius:20px;\n\t\t\tpadding:25px;\n\t\t\tbox-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);\n\t\t\tposition:absolute;\n\t\t\twidth:30%;\n\t\t\tz-index:99999;\n\t\t\tbackground-color:white;\n\t\t}\n\t\t.colorclass\n\t\t{\n\t\t\ttext-align:center;\n\t\t\tborder-bottom:2px solid rgb(149,179,171);\n\t\t\tmargin-bottom:12px;\n\t\t\tpadding-bottom:4px;\n\n\t\t}\n\t\t.mainmenu-icon\n\t\t{\n\t\t\twidth:40%;\n\t\t\tmargin-left:28%;\n\t\t\tmargin-top:28px;\n\t\t\tmargin-bottom:10px;\n\t\t}\t\n\t\t.buttonclass\n\t\t{\n\t\t\twidth: 60%;\n\t\t\tfloat: right;\n\t\t\tposition: bottom;\n\t\t\tdisplay: inline-block;\n\t\t}\n\t\t.buttonclass i\n\t\t{\n\t\t\twidth:4px;\n\t\t}\n\t\t.buttonclass a\n\t\t{\n\t\t\tpadding-right:6px;\n\t\t\tpadding-left:6px;\n\t\t}\n\t\t.deleteLinks\n\t\t{\n\t\t\tcolor:#fa1e0e;\n\t\t}\n\t\t.deletelinks a\n\t\t{\n\t\t\tmargin-bottom:20px !important;\n\t\t}\n\t\t.markasCompletedLinks\n\t\t{\n\t\t\tcolor:#16c79a;\n\t\t}\n\t\t.editLinks\n\t\t{\n\t\t\tcolor:#5388b4;\n\t\t}\n\t\t.strikethrough\n\t\t{\n\t\t\ttext-decoration:line-through;\n\t\t}\n\t\t.task\n\t\t{\n\t\t\tmin-height:4.5rem;\n\t\t}\n\t\t.formclass input\n\t\t{\n\t\t\tmargin:0.5rem;\n\t\t}\n\t\t.formclass input[type=\"submit\"] {\n\t\t  font-family: \"Raleway\", sans-serif;\n\t\t  font-weight: 500;\n\t\t  font-size: 14px;\n\t\t  letter-spacing: 1px;\n\t\t  display: inline-block;\n\t\t  padding: 12px 32px;\n\t\t  border-radius: 50px;\n\t\t  transition: 0.5s;\n\t\t  line-height: 1;\n\t\t  margin: 10px;\n\t\t  color: #fff;\n\t\t  -webkit-animation-delay: 0.8s;\n\t\t  animation-delay: 0.8s;\n\t\t  background: rgba(149,179,171,0.8);\n\t\t  border:none;\n\t\t}\n\n\t\t.formclass input[type=\"submit\"]:hover {\n\t\t  background: transparent;\n\t\t  color: rgba(149,179,171,0.8);\n\t\t  text-decoration: none;\n\t\t  border: 2px solid rgba(149,179,171,0.8);\n\t\t}\n\t\t.formclass #cancelbutton\n\t\t{\n\t\t\tfont-family: \"Raleway\", sans-serif;\n\t\t  font-weight: 500;\n\t\t  font-size: 14px;\n\t\t  letter-spacing: 1px;\n\t\t  display: inline-block;\n\t\t  padding: 12px 32px;\n\t\t  border-radius: 50px;\n\t\t  transition: 0.5s;\n\t\t  line-height: 1;\n\t\t  margin: 10px;\n\t\t  color: #fff;\n\t\t  -webkit-animation-delay: 0.8s;\n\t\t  animation-delay: 0.8s;\n\t\t  background: #ff9292;\n\t\t  border:none;\n\t\t}\n\t\t.formclass #cancelbutton:hover {\n\t\t  background: transparent;\n\t\t  color: rgba(149,179,171,0.8);\n\t\t  text-decoration: none;\n\t\t  border: 2px solid #ff9292;\n\t\t}\n\t\t.formbuttons\n\t\t{\n\t\t\tdisplay: flex;\n\t\t\talign-items: center;\n\t\t\tjustify-content: center;\n\t\t}\n\t\t#add_passwords\n\t\t{\n\t\t\tfloat: right;\n\t\t\tmargin-right: 12px;\n\t\t\tfont-family: \"Raleway\", sans-serif;\n\t\t  font-weight: 500;\n\t\t  font-size: 18px;\n\t\t  letter-spacing: 1px;\n\t\t  /*padding: 12px 32px;*/\n\t\t  border-radius: 50px;\n\t\t  transition: 0.5s;\n\t\t  margin: 10px;\n\t\t  color: #fff;\n\t\t  -webkit-animation-delay: 0.8s;\n\t\t  animation-delay: 0.8s;\n\t\t  background: rgba(149,179,171,0.8);\n\t\t  border:none;\n\t\t}\n\t\t#add_passwords:hover {\n\t\t\tbackground: transparent;\n\t\t  color: rgba(149,179,171);\n\t\t  text-decoration: none;\n\t\t  border: 1px solid rgba(149,179,171,0.8);;\n\t\t}\n\t\t\n\t</style>\n\t</head>\n\t<body>\n\t\t<!-- header which contains top nav -->\n\t\t<header id=\"header\" class=\"d-flex align-items-center\">\n\t\t\t<div class=\"container d-flex justify-content-between align-items-center\">\n\t\t\t\t<div class=\"logo\">\n\t\t\t\t\t<h1>\n\t\t\t\t\t\t<a id=\"problematic_a\" href=\"/\">Personal Management System</a>\n\t\t\t\t\t</h1>\n\t\t\t\t</div>\n\t\t\t\t<div id=\"navbar_div\" class=\"navbar_div\">\n\t\t\t\t\t<a class=\"welcomeback\" href=\"/\"><i class=\"fa fa-user fa-2x\" aria-hidden=\"true\"></i>Welcome back {{request.user.username|title}}!</a>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</header>\n\t\t<!-- Side navbar -->\n\t\t<nav class=\"main-menu\">\n\t\t\t<img class=\"mainmenu-icon\" src=\"{% static 'mainmenulogo.png'%}\"\t alt=\"\"></img>\n            <ul>\n                <li>\n                    <a href=\"/\">\n                        <i class=\"fa fa-home fa-2x\"></i>\n                        <span class=\"nav-text\">\n                            Home\n                        </span>\n                    </a>\n                </li>\n\n                <li>\n                    <a href=\"{% url 'dashboard:dashboard_page' %}\">\n                        <i class=\"fa fa-tachometer fa-2x\"></i>\n                        <span class=\"nav-text\">\n                            Dashboard\n                        </span>\n                    </a>\n                  \n                </li>\n                <li class=\"has-subnav\">\n                    <a href=\"/todolist\">\n                        <i class=\"fa fa-list fa-2x\"></i>\n                        <span class=\"nav-text\">\n                            To-Do List\n                        </span>\n                    </a>\n                    \n                </li>\n                <li class=\"has-subnav\">\n                    <a href=\"#\">\n                       <i class=\"fa fa-calendar fa-2x\"></i>\n                        <span class=\"nav-text\">\n                            Schedule\n                        </span>\n                    </a>\n                </li>\n                <li class=\"has-subnav\">\n                    <a href=\"/passwords\">\n                       <i class=\"fa fa-laptop fa-2x\"></i>\n                        <span class=\"nav-text\">\n                            Passwords\n                        </span>\n                    </a>\n                </li>\n                <li>\n                    <a href=\"#\">\n                        <i class=\"fa fa-credit-card fa-2x\"></i>\n                        <span class=\"nav-text\">\n                            Bills and Payments\n                        </span>\n                    </a>\n                </li>\n                <li>\n                    <a href=\"#\">\n                        <i class=\"fa fa-exclamation fa-2x\"></i>\n                        <span class=\"nav-text\">\n                           Issues\n                        </span>\n                    </a>\n                </li>\n                <li>\n                   <a href=\"{% url 'accounts:change_password' %}\">\n                       <i class=\"fa fa-wrench fa-2x\"></i>\n                        <span class=\"nav-text\">\n                            Change Password\n                        </span>\n                    </a>\n                </li>\n                <li>\n                   <a href=\"{% url 'accounts:change_profile' %}\">\n                        <i class=\"fa fa-user fa-2x\"></i>\n                        <span class=\"nav-text\">\n                            Change Profile\n                        </span>\n                    </a>\n                </li>\n                <li>\n                    <a href=\"{% url 'accounts:change_email' %}\">\n                       <i class=\"fa fa-cog fa-2x\"></i>\n                        <span class=\"nav-text\">\n                            Change Email\n                        </span>\n                    </a>\n                </li> \n            </ul>\n            <ul class=\"logout\">\n                <li>\n                   <a href=\"{% url 'accounts:log_out' %}\">\n                         <i class=\"fa fa-power-off fa-2x\"></i>\n                        <span class=\"nav-text\">\n                            Logout\n                        </span>\n                    </a>\n                </li>  \n            </ul>\n        </nav>\n        <!-- main content -->\n        <div class=\"maincontent\">\n        \t<div class=\"formpopup\" id=\"formpopup_div\">\n        \t\t<div class=\"colorclass\">Add Schedule</div>\n        \t\t<form method=\"post\" class=\"formclass\" autocomplete=\"off\">{% csrf_token %}\n\t\t\t\t\t{{ form.as_p}}\n\t\t\t\t\t<div class=\"formbuttons\">\n\t\t\t\t\t\t<input type=\"submit\" name=\"submit\" value=\"Submit\" onclick=\"hideForm()\"/>\n\t\t\t\t\t\t<button type=\"button\" id=\"cancelbutton\" onclick=\"hideForm(this.parentNode.parentNode.parentNode.id)\">Cancel</button>\n\t\t\t\t\t</div>\n\t\t\t\t</form>\n        \t</div>\n        <div class=\"container bigcontainer page-todo bootstrap snippets bootdeys\" id=\"bigcontainer_div\">\n\t\t<div class=\"col-sm-14 tasks\">\n\t\t    <div class=\"task-list\">\n\t\t        <h1 class=\"tableheadingh1\"><span class=\"tableheading\">Schedules</span><span><button type=\"button\" id=\"add_passwords\" onclick=\"showForm('formpopup_div')\">+Add Schedule</button></span></h1>\n\t\t\t\t\n\t\t        <div class=\"clearfix\"></div>        \n\t\t    </div>      \n\t\t</div>\n</div>\n</div>\n\t</body>\n</html>\n<script>\n\tfunction showForm(formID)\n\t{\t\n\t\tvar div= document.getElementById(formID);\n\t\tconsole.log(div);\n\t\tdiv.style.display=\"block\";\n\t\tvar bigcontainer = document.getElementById(\"bigcontainer_div\");\n\t\tbigcontainer.style.opacity=0.4;\n\t}\n\tfunction hideForm(formID)\n\t{\n\t\tvar div= document.getElementById(formID);\n\t\tdiv.style.display=\"none\";\n\t\tvar bigcontainer = document.getElementById(\"bigcontainer_div\");\n\t\tbigcontainer.style.opacity=1;\n\t}\n</script>\n</Scheduledisplay.html>",
-			"settings":
-			{
-				"buffer_size": 19720,
-				"line_ending": "Windows",
-				"name": "<models.py>"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -166,6 +47,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
 			[
 				"Package Control: ",
 				"Package Control: Install Package"
@@ -199,51 +84,25 @@
 	},
 	"expanded_folders":
 	[
-<<<<<<< HEAD
-		"/G/Muskaan/Notes/Year 3/Sem 6/SE/Personal-Management-System-Django",
-		"/G/Muskaan/Notes/Year 3/Sem 6/SE/Personal-Management-System-Django/src",
-		"/G/Muskaan/Notes/Year 3/Sem 6/SE/Personal-Management-System-Django/src/content",
-		"/G/Muskaan/Notes/Year 3/Sem 6/SE/Personal-Management-System-Django/src/content/templates",
-		"/G/Muskaan/Notes/Year 3/Sem 6/SE/Personal-Management-System-Django/src/content/templates/layouts",
-		"/G/Muskaan/Notes/Year 3/Sem 6/SE/Personal-Management-System-Django/src/content/templates/main",
-		"/G/Muskaan/Notes/Year 3/Sem 6/SE/Personal-Management-System-Django/src/issues",
-		"/G/Muskaan/Notes/Year 3/Sem 6/SE/Personal-Management-System-Django/src/issues/templates",
-		"/G/Muskaan/Notes/Year 3/Sem 6/SE/Personal-Management-System-Django/src/todolist",
-		"/G/Muskaan/Notes/Year 3/Sem 6/SE/Personal-Management-System-Django/src/todolist/templates"
-	],
-	"file_history":
-	[
-		"/G/Muskaan/Notes/Year 3/Sem 6/SE/Personal-Management-System-Django/src/issues/forms.py",
-		"/G/Muskaan/Notes/Year 3/Sem 6/SE/Personal-Management-System-Django/src/issues/models.py",
-		"/G/Muskaan/Notes/Year 3/Sem 6/SE/Personal-Management-System-Django/src/todolist/views.py",
-		"/G/Muskaan/Notes/Year 3/Sem 6/SE/Personal-Management-System-Django/src/PersonalManagementSystem/settings.py",
-		"/G/Muskaan/Notes/Year 3/Sem 6/SE/Personal-Management-System-Django/src/issues/admin.py",
-		"/G/Muskaan/Notes/Year 3/Sem 6/SE/Personal-Management-System-Django/src/db.sqlite3",
-		"/G/Muskaan/Notes/Year 3/Sem 6/SE/Personal-Management-System-Django/src/issues/templates/issues.html",
-		"/G/Muskaan/Notes/Year 3/Sem 6/SE/Personal-Management-System-Django/src/passwords/models.py",
-		"/G/Muskaan/Notes/Year 3/Sem 6/SE/Personal-Management-System-Django/src/content/static/assets/js/main.js",
-		"/G/Muskaan/Notes/Year 3/Sem 6/SE/Personal-Management-System-Django/src/todolist/templates/todolistdisplay.html",
-		"/G/Muskaan/Notes/Year 3/Sem 6/SE/Personal-Management-System-Django/src/PersonalManagementSystem/urls.py",
-=======
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/schedules",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/schedules/templates"
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/issues",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/issues/templates"
 	],
 	"file_history":
 	[
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/PersonalManagementSystem/settings.py",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/schedules/admin.py",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/schedules/models.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/schedules/forms.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/schedules/templates/scheduledisplay.html",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/schedules/views.py",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/passwords/forms.py",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/passwords/admin.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/passwords/models.py",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/schedules/models.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/PersonalManagementSystem/urls.py",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/passwords/forms.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/passwords/templates/passworddisplay.html",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/passwords/views.py",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/PersonalManagementSystem/settings.py",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/schedules/admin.py",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/passwords/admin.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/models.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/passwords/templates/passworddisplay_currentWorking.html",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/passwords/templates/passworddisplay_alternate_1.html",
@@ -259,7 +118,6 @@
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/views.py",
 		"/C/Users/rajiv/AppData/Roaming/Sublime Text 3/Packages/Print to HTML/Print to HTML.sublime-settings",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content/static/assets/js/main.js",
->>>>>>> 3d36fadf3ff11af206de61daf368d386d1be859a
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content/assets/assets/css/style.css",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content/assets/assets/js/main.js",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/templates/todolistdisplay_old.html",
@@ -272,7 +130,6 @@
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/templates/todolistdisplay_current.html",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/static/nav_assets/scss/style.scss",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/static/nav_assets/css/style.css",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/content/templates/main/index.html",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/static/nav2.css",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/todolist/static/assets/nav2.js",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/accounts/views.py",
@@ -361,27 +218,11 @@
 		"/C/xampp/phpMyAdmin/config.inc.php",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/Labs/Experiment 6/calculatorjs.js",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/Labs/Experiment 6/calculathor.html",
-<<<<<<< HEAD
-		"/C/xampp/htdocs/form_validation.php",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/Labs/Experiment 7/form_to_validate.html",
-		"/C/xampp/htdocs/check.php",
-		"/C/xampp/htdocs/q4php.php",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/FINAL EXAM STUFF/q4.html",
-		"/C/xampp/htdocs/index.php",
-		"/C/xampp/htdocs/compute.php",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/Labs/Experiment 5/lab4css.css",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/SEM-5/WP/Labs/Experiment 5/lab4.html"
-	],
-	"find":
-	{
-		"height": 28.0
-=======
 		"/C/xampp/htdocs/form_validation.php"
 	],
 	"find":
 	{
-		"height": 41.0
->>>>>>> 3d36fadf3ff11af206de61daf368d386d1be859a
+		"height": 29.0
 	},
 	"find_in_files":
 	{
@@ -395,10 +236,6 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-<<<<<<< HEAD
-			"2050",
-			"due",
-=======
 			"actionbutton",
 			"actionbut",
 			"\t\t\n",
@@ -413,7 +250,6 @@
 			".body",
 			"password",
 			"passwords",
->>>>>>> 3d36fadf3ff11af206de61daf368d386d1be859a
 			"inner",
 			"innher",
 			"form",
@@ -485,423 +321,14 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-<<<<<<< HEAD
-					"file": "src/issues/views.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3179,
-=======
-					"file": "src/PersonalManagementSystem/urls.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1794,
->>>>>>> 3d36fadf3ff11af206de61daf368d386d1be859a
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-<<<<<<< HEAD
-								2043,
-								2043
-=======
-								405,
-								405
->>>>>>> 3d36fadf3ff11af206de61daf368d386d1be859a
-							]
-						],
-						"settings":
-						{
-<<<<<<< HEAD
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1050.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-=======
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
->>>>>>> 3d36fadf3ff11af206de61daf368d386d1be859a
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-<<<<<<< HEAD
-					"file": "src/issues/templates/issues.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 21687,
-=======
-					"file": "src/schedules/models.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 672,
->>>>>>> 3d36fadf3ff11af206de61daf368d386d1be859a
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-<<<<<<< HEAD
-								18351,
-								18351
-=======
-								407,
-								407
->>>>>>> 3d36fadf3ff11af206de61daf368d386d1be859a
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-<<<<<<< HEAD
-						"translation.y": 7744.8,
-=======
-						"translation.y": 0.0,
->>>>>>> 3d36fadf3ff11af206de61daf368d386d1be859a
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-<<<<<<< HEAD
-					"file": "/C/Users/HP/Desktop/card.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 17719,
-=======
-					"file": "src/schedules/views.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1433,
->>>>>>> 3d36fadf3ff11af206de61daf368d386d1be859a
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-<<<<<<< HEAD
-								4033,
-								4033
-=======
-								1433,
-								1433
->>>>>>> 3d36fadf3ff11af206de61daf368d386d1be859a
-							]
-						],
-						"settings":
-						{
-<<<<<<< HEAD
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3423.2,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-=======
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
->>>>>>> 3d36fadf3ff11af206de61daf368d386d1be859a
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-<<<<<<< HEAD
-					"file": "src/content/templates/main/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10651,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 258.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "src/PersonalManagementSystem/urls.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1713,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1313,
-								1602
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 420.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "src/todolist/templates/todolistdisplay.html",
-=======
-					"file": "src/schedules/templates/scheduledisplay.html",
->>>>>>> 3d36fadf3ff11af206de61daf368d386d1be859a
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 16882,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-<<<<<<< HEAD
-								0,
-								25331
-=======
-								15329,
-								15329
->>>>>>> 3d36fadf3ff11af206de61daf368d386d1be859a
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-<<<<<<< HEAD
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-=======
-						"translation.y": 11359.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "src/schedules/forms.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 548,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								548,
-								548
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 2,
-			"sheets":
-			[
-				{
-					"buffer": 5,
-					"file": "src/passwords/views.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2216,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "src/passwords/templates/passworddisplay.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 23152,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								21742,
-								21742
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 15360.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "src/passwords/forms.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 417,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 19720,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2814,
-								19696
-							]
-						],
-						"settings":
-						{
-							"auto_name": "<models.py>",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 14220.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
->>>>>>> 3d36fadf3ff11af206de61daf368d386d1be859a
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-<<<<<<< HEAD
-		"height": 28.0
-=======
 		"height": 29.0
->>>>>>> 3d36fadf3ff11af206de61daf368d386d1be859a
 	},
 	"input":
 	{
@@ -916,18 +343,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
 			1.0
 		],
 		"rows":
@@ -945,11 +365,7 @@
 	"project": "PersonalManagementSystem.sublime-project",
 	"replace":
 	{
-<<<<<<< HEAD
-		"height": 52.0
-=======
 		"height": 54.0
->>>>>>> 3d36fadf3ff11af206de61daf368d386d1be859a
 	},
 	"save_all_on_build": true,
 	"select_file":

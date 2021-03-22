@@ -1,6 +1,7 @@
 from .models import Schedules
 from django.forms import ModelForm
 from django.db import models
+from django.contrib import admin
 from django import forms
 
 class ScheduleForm(ModelForm):
@@ -14,7 +15,6 @@ class ScheduleForm(ModelForm):
 			'eventDuration':'Duration of Event',
 			'eventType':'Type of event'
 		}
-		# widgets={
-		# 	'eventDateTime':forms.DateTimeInput(),
-		# 	'eventDuration':forms.TimeInput(),
-		# }
+
+	
+		
