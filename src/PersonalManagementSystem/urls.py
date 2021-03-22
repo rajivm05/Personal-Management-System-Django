@@ -17,6 +17,7 @@ from dashboard.views import dashboard_view
 from todolist.views import CreateToDoListView, taskJson, deleteJson, markItemAsCompleted, editTask
 from issues.views import IssueView
 from passwords.views import PasswordView, deletePassword, updatePassword
+# from schedules.views import ScheduleView
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -40,6 +41,7 @@ urlpatterns = [
     path('passwords/delete/<int:password>',deletePassword,name='deletePassword'),
     path('passwords/update/<int:password>',updatePassword,name='updatePassword'),
 
+    # path('schedules/',ScheduleView.as_view()),
 
 ]
 
