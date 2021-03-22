@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'dashboard',
     'todolist',
     'issues',
+    'schedules',
     'passwords',
     # other apps
     'main',

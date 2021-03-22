@@ -1,0 +1,618 @@
+{% load static %}
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+		<title>Passwords</title>
+		<meta content="" name="description">
+		<meta content="" name="keywords">
+
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+		<!-- Favicons -->
+		<!-- <link href="{% static 'assets/img/favicon.png'%}" rel="icon"> -->
+		<!-- <link href="{% static 'assets/img/apple-touch-icon.png'%}" rel="apple-touch-icon"> -->
+
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+		<!-- Vendor CSS Files -->
+		<link href="{% static 'assets/vendor/animate.css/animate.min.css'%}" rel="stylesheet">
+		<link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+		<link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
+		<link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css'%}" rel="stylesheet">
+		<link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet">
+		<link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet">
+		<!-- New nav files -->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- <link rel="stylesheet" href="{% static 'nav_assets/css/style.css'%}"> -->
+		<!-- Template Main CSS File -->
+		<link href="{% static 'assets/css/style.css''%}" rel="stylesheet">
+		
+		<!-- CSS for Top nav -->
+		<style type="text/css">
+			@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+			.welcomeback
+			{
+				font-size:20px !important;
+				margin-right: 0px;
+			}
+			.fa-2x {
+            	font-size: 1em !important;
+            	padding-right:3px !important;
+            }
+            .welcomeback
+            {
+            	color:#545454 !important;
+            }
+            #problematic_a
+            {
+            	padding-left:115px !important;
+            }
+            #problematic_columnheader
+            {
+            	padding-left:7.6rem !important;
+            }
+		</style>
+		<!-- CSS for side nav -->
+		<style>
+        @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+        }
+            @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+            .fa-2x {
+            font-size: 2em;
+            }
+            .fa {
+            position: relative;
+            display: table-cell;
+            width: 60px;
+            height: 36px;
+            text-align: center;
+            vertical-align: middle;
+            font-size:20px;
+        }
+        .main-menu:hover,nav.main-menu.expanded 
+        {
+            width:220px;
+            overflow:visible;
+        }
+        .main-menu 
+        {
+            background:#212121;
+            border-right:1px solid #e5e5e5;
+            position:absolute;
+            top:0;
+            bottom:0;
+            height:100%;
+            left:0;
+            width:220px;
+            /*overflow:hidden;*/
+            -webkit-transition:width .05s linear;
+            transition:width .05s linear;
+            -webkit-transform:translateZ(0) scale(1,1);
+            z-index:1000;
+        }
+        .main-menu>ul 
+        {
+            margin:7px 0;
+        }
+        .main-menu li 
+        {
+            position:relative;
+            display:block;
+            width:220px;
+        }
+        .main-menu li>a 
+        {
+            position:relative;
+            display:table;
+            border-collapse:collapse;
+            border-spacing:0;
+            color:#999;
+             font-family: arial;
+            font-size: 14px;
+            text-decoration:none;
+            -webkit-transform:translateZ(0) scale(1,1);
+            -webkit-transition:all .1s linear;
+            transition:all .1s linear;     
+        }
+        .main-menu .nav-icon 
+        {
+            position:relative;
+            display:table-cell;
+            width:60px;
+            height:36px;
+            text-align:center;
+            vertical-align:middle;
+            font-size:18px;
+        }
+        .main-menu .nav-text 
+        {
+            position:relative;
+            display:table-cell;
+            vertical-align:middle;
+            width:190px;
+            font-family: 'Titillium Web', sans-serif;
+        }
+        .main-menu>ul.logout 
+        {
+            position:absolute;
+            left:0;
+            bottom:0;
+        }
+        .no-touch .scrollable.hover 
+        {
+            overflow-y:hidden;
+        }
+        .no-touch .scrollable.hover:hover 
+        {
+            overflow-y:auto;
+            overflow:visible;
+        }
+        a:hover,a:focus 
+        {
+            text-decoration:none;
+        }
+        nav 
+        {
+            -webkit-user-select:none;
+            -moz-user-select:none;
+            -ms-user-select:none;
+            -o-user-select:none;
+            user-select:none;
+            /*height:100%;*/
+        }
+
+        nav ul,nav li 
+        {
+            outline:0;
+            margin:0;
+            padding:0;
+        }
+        .main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a 
+        {
+            color:#fff;
+            background-color:#5fa2db;
+        }
+        .area 
+        {
+            margin-left:3.7rem;
+            background-color:#d2e9f6; 
+            height: 100%;
+        }
+        @font-face 
+        {
+            font-family: 'Titillium Web';
+            font-style: normal;
+            font-weight: 300;
+            src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
+        }
+    	</style>
+    	<!-- main content style -->
+    	<style>
+    	.maincontent
+        {
+        	margin-left:15rem;
+        	margin-top:1.5rem;
+        }
+
+		.page-todo .tasks 
+		{
+		    background: #fff;
+		    padding: 0;
+		    border-right: 1px solid #d1d4d7;
+		    margin: -30px 15px -30px -15px
+		}
+
+		.page-todo .task-list {
+		    padding: 30px 15px;
+		    min-height: 100%
+		}
+
+
+		.page-todo .task {
+		    border-bottom: 1px solid #e4e5e6;
+		    margin-bottom: 1px;
+		    position: relative
+		}
+
+		.page-todo .task .desc {
+		    display: inline-block;
+		    width: 75%;
+		    padding: 10px 10px;
+		    font-size: 14px
+		}
+
+		.page-todo .task .desc .title {
+		    font-size: 18px;
+		    margin-bottom: 5px
+		}
+
+		.page-todo .task .time {
+		    display: inline-block;
+		    width: 15%;
+		    padding: 10px 10px 10px 0;
+		    font-size: 12px;
+		    text-align: right;
+		    position: absolute;
+		    top: 0;
+		    right: 0
+		}
+
+		.page-todo .task .time .date {
+		    font-size: 18px;
+		    margin-bottom: 5px
+		}
+
+		.page-todo .task.last {
+		    border-bottom: 1px solid transparent
+		}
+
+		.page-todo .task.high {
+		    border-left: 2px solid #f86c6b
+		}
+
+		.page-todo .task.medium {
+		    border-left: 2px solid #ff97b7
+		}
+
+		.page-todo .task.low {
+		    border-left: 2px solid #4895ef;
+
+		}	
+		.page-todo .task.verylow {
+		    border-left: 2px solid #4dbd74
+
+		}	
+		.bigcontainer
+		{
+			overflow-y: scroll;
+			max-height:85%;
+			/*needs to be done when the add task form is active*/
+			/*opacity:0.4;*/
+		}
+		body
+		{
+			/*overflow: hidden;*/
+		}
+		h1
+		{
+			/*font-family: poppins;*/
+			font-size: 26px;
+			font-weight: bold;
+		}
+		.page-todo .priority.verylow {
+		    background: #4dbd74;
+		}
+
+		.page-todo .priority.verylow span {
+		    background: #4dbd74;
+		}
+		.addtask
+		{
+			float: right;
+		}
+		.addtask button
+		{
+			box-sizing: border-box;
+			border: none;
+			padding:0px;
+			background:transparent;
+			font-size:inherit;
+			font-weight:inherit;
+			font-family:inherit;
+			color:#fff;
+		}
+		.formpopup
+		{
+			/*Needs to be none by default, use js to change the display*/
+			display: none;
+
+
+			margin:12% 25%;
+			border-radius:20px;
+			padding:25px;
+			box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
+			position:absolute;
+			width:30%;
+			z-index:99999;
+			background-color:white;
+		}
+		.colorclass
+		{
+			text-align:center;
+			border-bottom:2px solid rgb(149,179,171);
+			margin-bottom:12px;
+			padding-bottom:4px;
+
+		}
+		.mainmenu-icon
+		{
+			width:40%;
+			margin-left:28%;
+			margin-top:28px;
+			margin-bottom:10px;
+		}	
+		.buttonclass
+		{
+			width: 60%;
+			float: right;
+			position: bottom;
+			display: inline-block;
+		}
+		.buttonclass i
+		{
+			width:4px;
+		}
+		.buttonclass a
+		{
+			padding-right:6px;
+			padding-left:6px;
+		}
+		.deleteLinks
+		{
+			color:#fa1e0e;
+		}
+		.deletelinks a
+		{
+			margin-bottom:20px !important;
+		}
+		.markasCompletedLinks
+		{
+			color:#16c79a;
+		}
+		.editLinks
+		{
+			color:#5388b4;
+		}
+		.strikethrough
+		{
+			text-decoration:line-through;
+		}
+		.task
+		{
+			min-height:4.5rem;
+		}
+		.formclass input
+		{
+			margin:0.5rem;
+		}
+		.formclass input[type="submit"] {
+		  font-family: "Raleway", sans-serif;
+		  font-weight: 500;
+		  font-size: 14px;
+		  letter-spacing: 1px;
+		  display: inline-block;
+		  padding: 12px 32px;
+		  border-radius: 50px;
+		  transition: 0.5s;
+		  line-height: 1;
+		  margin: 10px;
+		  color: #fff;
+		  -webkit-animation-delay: 0.8s;
+		  animation-delay: 0.8s;
+		  background: rgba(149,179,171,0.8);
+		  border:none;
+		}
+
+		.formclass input[type="submit"]:hover {
+		  background: transparent;
+		  color: rgba(149,179,171,0.8);
+		  text-decoration: none;
+		  border: 2px solid rgba(149,179,171,0.8);
+		}
+		.formclass #cancelbutton
+		{
+			font-family: "Raleway", sans-serif;
+		  font-weight: 500;
+		  font-size: 14px;
+		  letter-spacing: 1px;
+		  display: inline-block;
+		  padding: 12px 32px;
+		  border-radius: 50px;
+		  transition: 0.5s;
+		  line-height: 1;
+		  margin: 10px;
+		  color: #fff;
+		  -webkit-animation-delay: 0.8s;
+		  animation-delay: 0.8s;
+		  background: #ff9292;
+		  border:none;
+		}
+		.formclass #cancelbutton:hover {
+		  background: transparent;
+		  color: rgba(149,179,171,0.8);
+		  text-decoration: none;
+		  border: 2px solid #ff9292;
+		}
+		.formbuttons
+		{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		#add_passwords
+		{
+			float: right;
+			margin-right: 12px;
+			font-family: "Raleway", sans-serif;
+		  font-weight: 500;
+		  font-size: 18px;
+		  letter-spacing: 1px;
+		  /*padding: 12px 32px;*/
+		  border-radius: 50px;
+		  transition: 0.5s;
+		  margin: 10px;
+		  color: #fff;
+		  -webkit-animation-delay: 0.8s;
+		  animation-delay: 0.8s;
+		  background: rgba(149,179,171,0.8);
+		  border:none;
+		}
+		#add_passwords:hover {
+			background: transparent;
+		  color: rgba(149,179,171);
+		  text-decoration: none;
+		  border: 1px solid rgba(149,179,171,0.8);;
+		}
+		
+	</style>
+	</head>
+	<body>
+		<!-- header which contains top nav -->
+		<header id="header" class="d-flex align-items-center">
+			<div class="container d-flex justify-content-between align-items-center">
+				<div class="logo">
+					<h1>
+						<a id="problematic_a" href="/">Personal Management System</a>
+					</h1>
+				</div>
+				<div id="navbar_div" class="navbar_div">
+					<a class="welcomeback" href="/"><i class="fa fa-user fa-2x" aria-hidden="true"></i>Welcome back {{request.user.username|title}}!</a>
+				</div>
+			</div>
+		</header>
+		<!-- Side navbar -->
+		<nav class="main-menu">
+			<img class="mainmenu-icon" src="{% static 'mainmenulogo.png'%}"	 alt=""></img>
+            <ul>
+                <li>
+                    <a href="/">
+                        <i class="fa fa-home fa-2x"></i>
+                        <span class="nav-text">
+                            Home
+                        </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'dashboard:dashboard_page' %}">
+                        <i class="fa fa-tachometer fa-2x"></i>
+                        <span class="nav-text">
+                            Dashboard
+                        </span>
+                    </a>
+                  
+                </li>
+                <li class="has-subnav">
+                    <a href="/todolist">
+                        <i class="fa fa-list fa-2x"></i>
+                        <span class="nav-text">
+                            To-Do List
+                        </span>
+                    </a>
+                    
+                </li>
+                <li class="has-subnav">
+                    <a href="#">
+                       <i class="fa fa-calendar fa-2x"></i>
+                        <span class="nav-text">
+                            Schedule
+                        </span>
+                    </a>
+                </li>
+                <li class="has-subnav">
+                    <a href="/passwords">
+                       <i class="fa fa-laptop fa-2x"></i>
+                        <span class="nav-text">
+                            Passwords
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-credit-card fa-2x"></i>
+                        <span class="nav-text">
+                            Bills and Payments
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-exclamation fa-2x"></i>
+                        <span class="nav-text">
+                           Issues
+                        </span>
+                    </a>
+                </li>
+                <li>
+                   <a href="{% url 'accounts:change_password' %}">
+                       <i class="fa fa-wrench fa-2x"></i>
+                        <span class="nav-text">
+                            Change Password
+                        </span>
+                    </a>
+                </li>
+                <li>
+                   <a href="{% url 'accounts:change_profile' %}">
+                        <i class="fa fa-user fa-2x"></i>
+                        <span class="nav-text">
+                            Change Profile
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'accounts:change_email' %}">
+                       <i class="fa fa-cog fa-2x"></i>
+                        <span class="nav-text">
+                            Change Email
+                        </span>
+                    </a>
+                </li> 
+            </ul>
+            <ul class="logout">
+                <li>
+                   <a href="{% url 'accounts:log_out' %}">
+                         <i class="fa fa-power-off fa-2x"></i>
+                        <span class="nav-text">
+                            Logout
+                        </span>
+                    </a>
+                </li>  
+            </ul>
+        </nav>
+        <!-- main content -->
+        <div class="maincontent">
+        	<div class="formpopup" id="formpopup_div">
+        		<div class="colorclass">Add Schedule</div>
+        		<form method="post" class="formclass" autocomplete="off">{% csrf_token %}
+					{{ form.as_p}}
+					<div class="formbuttons">
+						<input type="submit" name="submit" value="Submit" onclick="hideForm()"/>
+						<button type="button" id="cancelbutton" onclick="hideForm(this.parentNode.parentNode.parentNode.id)">Cancel</button>
+					</div>
+				</form>
+        	</div>
+        <div class="container bigcontainer page-todo bootstrap snippets bootdeys" id="bigcontainer_div">
+		<div class="col-sm-14 tasks">
+		    <div class="task-list">
+		        <h1 class="tableheadingh1"><span class="tableheading">Schedules</span><span><button type="button" id="add_passwords" onclick="showForm('formpopup_div')">+Add Schedule</button></span></h1>
+				
+		        <div class="clearfix"></div>        
+		    </div>      
+		</div>
+</div>
+</div>
+	</body>
+</html>
+<script>
+	function showForm(formID)
+	{	
+		var div= document.getElementById(formID);
+		console.log(div);
+		div.style.display="block";
+		var bigcontainer = document.getElementById("bigcontainer_div");
+		bigcontainer.style.opacity=0.4;
+	}
+	function hideForm(formID)
+	{
+		var div= document.getElementById(formID);
+		div.style.display="none";
+		var bigcontainer = document.getElementById("bigcontainer_div");
+		bigcontainer.style.opacity=1;
+	}
+</script>
