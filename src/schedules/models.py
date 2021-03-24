@@ -5,9 +5,8 @@ from django.contrib.auth.models import User
 class Schedules(models.Model):
 	user = models.ForeignKey(User,on_delete=models.CASCADE)
 	eventName = models.CharField(max_length=255, blank=False)
-	eventDate = models.DateField(blank=False)
-	eventTime = models.TimeField(auto_now=False, blank=False,auto_now_add=False)
-	eventDuration = models.DurationField()
+	eventStart = models.DateTimeField(blank=False)
+	eventEnd = models.DateTimeField(blank=False,help_text="The end time must be later than the start time.")
 	eventTypes_list = (('Academic','Academic'),('Administrative', 'Administrative'),('Personal','Personal'),('Research','Research'))
 	eventType = models.CharField(max_length=255,choices=eventTypes_list,default='Academic')
 

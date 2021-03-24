@@ -193,9 +193,13 @@
     	</style>
     	<!-- main content style -->
     	<style>
+		.task-list
+		{
+
+		}
     	.maincontent
         {
-        	margin-left:15rem;
+        	margin-left:14rem;
         	margin-top:1.5rem;
         }
 
@@ -483,6 +487,7 @@
 	.center {
         display: flex;
           flex-wrap: wrap;
+          margin-right: 10px !important;
 
       }
 
@@ -497,7 +502,7 @@
         overflow: hidden;
         position: relative;
         margin: 1rem;
-        margin-right: 0.4rem;
+        margin-right: 0rem;
       }
 
       .card h1 {
@@ -506,7 +511,11 @@
         border-bottom:2px solid rgb(149,179,171);
         padding-bottom: 0.3rem;
       }
+      .card
+      {
+      	display: inline-block !important;
 
+      }
       .card .additional {
         position: absolute;
         width: 75px;
@@ -551,7 +560,7 @@
         width: 325px;
         float: left;
         position: absolute;
-        left: 120px;
+        left: 75px;
         height: 100%;
       }
 
@@ -636,6 +645,34 @@
         right: 1rem;
         font-size: 0.9em;
       }
+      #add_passwords
+		{
+			float: right;
+			margin-right: 12px;
+			font-family: "Raleway", sans-serif;
+		  font-weight: 500;
+		  font-size: 18px;
+		  letter-spacing: 1px;
+		  /*padding: 12px 32px;*/
+		  border-radius: 50px;
+		  transition: 0.5s;
+		  margin: 10px;
+		  color: #fff;
+		  -webkit-animation-delay: 0.8s;
+		  animation-delay: 0.8s;
+		  background: rgba(149,179,171,0.8);
+		  border:none;
+		  margin-bottom:0px;
+		}
+		#add_passwords:hover {
+			background: transparent;
+		  color: rgba(149,179,171);
+		  text-decoration: none;
+		  border: 1px solid rgba(149,179,171,0.8);;
+		}
+		#bigcontainer_div{
+			max-width: 1350px;
+		}
     </style>
 	</head>
 	<body>
@@ -777,44 +814,45 @@
         <div class="container bigcontainer page-todo bootstrap snippets bootdeys" id="bigcontainer_div">
 		<div class="col-sm-14 tasks">
 		    <div class="task-list">
-		        <span><h1>Pending Issues</h1></span><span class="addtask"><button id="academic_add" onclick="showForm(this.id)">+Add Issue</button></span>
-		<div class="center">
-		{% for issue in issues %}
+		        <!-- <span><h1>Pending Issues</h1></span><span class="addtask"><button id="academic_add" onclick="showForm(this.id)">+Add Issue</button></span> -->
+		        <h1 class="tableheadingh1"><span class="tableheading">Pending Issues</span><span><button type="button" id="add_passwords" onclick="showForm(this.id)">+Add Issues</button></span></h1>
+
+				{% for issue in issues %}
 			
-      <div class="card green">
-        <div class="additional">
-          <div class="user-card">
-            
-          </div>
-          <div class="more-info">
-            <h1>{{issue.issueName}}</h1>
-            	<p>{{issue.issueDescription}}</p>
-            <div class="stats buttonclass">
-              <div>
-                <div class="title"><a href="/issues" onclick ="deleteItem(this.id)"class="deleteLinks" id="{{issue.id}}d"><i class="fa fa-trash" aria-hidden="true"></i></a></div>
-              </div>
-              <div>
-                <div class="title"><a href="#" onclick="editForm(this.id)" class="editLinks"id="{{issue.id}}e"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="general">
-          <h1>{{issue.issueName}}</h1>
-          	<div class="coords">
-          	  <span>Start Date: </span>
-              <span>{{issue.startDate}}</span>
-            </div>
-            <div class="coords">
-              <span>Last Progress Date: </span>
-              <span>{{issue.lastProgress}}</span>
-              <span></span>
-            </div>
-          <span class="more">Hover over the card for more info</span>
-        </div>
-      </div>
-		{% endfor %}
-    </div>
+			      <div class="card green">
+			        <div class="additional">
+			          <div class="user-card">
+			            
+			          </div>
+			          <div class="more-info">
+			            <h1>{{issue.issueName}}</h1>
+			            	<p>{{issue.issueDescription}}</p>
+			            <div class="stats buttonclass">
+			              <div>
+			                <div class="title"><a href="/issues" onclick ="deleteItem(this.id)"class="deleteLinks" id="{{issue.id}}d"><i class="fa fa-trash" aria-hidden="true"></i></a></div>
+			              </div>
+			              <div>
+			                <div class="title"><a href="#" onclick="editForm(this.id)" class="editLinks"id="{{issue.id}}e"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></div>
+			              </div>
+			            </div>
+			          </div>
+			        </div>
+			        <div class="general">
+			          <h1>{{issue.issueName}}</h1>
+			          	<div class="coords">
+			          	  <span>Start Date: </span>
+			              <span>{{issue.startDate}}</span>
+			            </div>
+			            <div class="coords">
+			              <span>Last Progress Date: </span>
+			              <span>{{issue.lastProgress}}</span>
+			              <span></span>
+			            </div>
+			          <span class="more">Hover over the card for more info</span>
+			        </div>
+			      </div>
+				{% endfor %}
+
 
 		        <div class="clearfix"></div>        
 		    </div>      

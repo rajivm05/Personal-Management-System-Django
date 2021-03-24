@@ -25,19 +25,21 @@ class ScheduleView(TemplateView):
 		if request.user.is_authenticated:
 			form = ScheduleForm(request.POST)
 			context={}
-			if form.isValid():
+			if form.is_valid():
 				eventName = request.POST.get('eventName')
-				eventDateTime = request.POST.get('eventDateTime')
-				eventDuration = request.POST.get('eventDuration')
+				eventStart = request.POST.get('eventStart')
+				eventEnd = request.POST.get('eventEnd')
 				eventType = request.POST.get('eventType')
 				user = request.user
 				schedule = Schedules(user=user,eventName=eventName,
-					eventDateTime=eventDateTime,
-					eventDuration=eventDuration,
+					eventStart=eventStart,
+					eventEnd=eventEnd,
 					eventType=eventType)
 				schedule.save()
 				form = ScheduleForm()
 				context['form']=form
+				return  render(request,'scheduledisplay.html',context)
+			else:
 				return  render(request,'scheduledisplay.html',context)
 		else:
 			return redirect(settings.LOGIN_REDIRECT_URL)
