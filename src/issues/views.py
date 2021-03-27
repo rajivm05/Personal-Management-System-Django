@@ -78,7 +78,7 @@ def deleteIssue(request,issue):
 		return redirect(settings.LOGIN_REDIRECT_URL)
 def editIssue(request,issue):
 	if request.user.is_authenticated:
-		issueObj =Issues.objects.filter(id=task)
+		issueObj =Issues.objects.filter(id=issue)
 		jsonitems = serializers.serialize("json",issueObj)
 		jsonitems = json.loads(jsonitems)
 		return JsonResponse(jsonitems,safe=False)
