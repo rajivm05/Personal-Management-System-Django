@@ -19,6 +19,7 @@ from issues.views import IssueView, issuesJson, deleteIssue, editIssue
 from issues.views import IssueView
 from passwords.views import PasswordView, deletePassword, updatePassword
 from schedules.views import ScheduleView
+from bills.views import BillsView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -47,6 +48,9 @@ urlpatterns = [
     path('passwords/update/<int:password>',updatePassword,name='updatePassword'),
 
     path('schedules/',ScheduleView.as_view()),
+
+    path('bills/',BillsView.as_view()),
+   
 
 ]
 

@@ -580,7 +580,9 @@
       }
 
       .card.green .additional .coords {
-        color: #325C46;
+        font-family: "Open Sans", sans-serif;
+    	color: #444444;
+    	margin-top: 0.5rem;
       }
 
       .card .additional .coords span + span {
@@ -826,7 +828,7 @@
 			          </div>
 			          <div class="more-info">
 			            <h1>{{issue.issueName}}</h1>
-			            	<p>{{issue.issueDescription}}</p>
+			            	<p class="coords">{{issue.issueDescription}}</p>
 			            <div class="stats buttonclass">
 			              <div>
 			                <div class="title"><a href="/issues" onclick ="deleteItem(this.id)"class="deleteLinks" id="{{issue.id}}d"><i class="fa fa-trash" aria-hidden="true"></i></a></div>
