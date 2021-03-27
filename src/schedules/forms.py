@@ -19,12 +19,9 @@ class ScheduleForm(ModelForm):
 		}
 		widgets = {
 		'eventStart':DateInput(),
-		'eventEnd':DateInput()
+		'eventEnd':DateInput(attrs={'onfocusout':'checkEnd()'}),
 		}
 		def clean_end(self):
-			if self.cleaned_data['end'] <= self.cleaned_data['start']:
+			if self.cleaned_data['eventEnd'] <= self.cleaned_data['eventStart']:
 				raise forms.ValidationError("The end time must be later than start time.")
-			return self.cleaned_data['end']
-
-	
-		
+			return self.cleaned_data['eventEnd']

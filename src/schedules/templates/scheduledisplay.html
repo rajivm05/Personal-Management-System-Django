@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-		<title>Passwords</title>
+		<title>Schedules</title>
 		<meta content="" name="description">
 		<meta content="" name="keywords">
 
@@ -55,7 +55,7 @@
             }
             #problematic_columnheader
             {
-            	padding-left:7.6rem !important;
+            	padding-left:4.8rem !important;
             }
 		</style>
 		<!-- CSS for side nav -->
@@ -459,10 +459,77 @@
 		  text-decoration: none;
 		  border: 1px solid rgba(149,179,171,0.8);;
 		}
-		
+		.responsive-table li {
+		  border-radius: 3px;
+		  padding: 25px 30px;
+		  display: flex;
+		  justify-content: space-between;
+		  margin-bottom: 25px;
+		}
+		.responsive-table .table-header {
+		  background-color: rgb(149,179,171);
+		  font-size: 14px;
+		  text-transform: uppercase;
+		  letter-spacing: 0.03em;
+		}
+		.responsive-table .table-row {
+		  background-color: #ffffff;
+		  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+		}
+		.responsive-table .col-1 {
+		  flex-basis: 25%;
+		  text-wrap: break-word;
+		}
+		.responsive-table .col-2 {
+		  flex-basis: 15%;
+		}
+		.responsive-table .col-3 {
+		  flex-basis: 22%;
+		}
+		.responsive-table .col-4 {
+		  flex-basis: 22%;
+		}
+		.responsive-table .col-5 {
+		  flex-basis: 16%;
+		}
+		@media all and (max-width: 767px) {
+		  .responsive-table .table-header {
+		    display: none;
+		  }
+		  .responsive-table li {
+		    display: block;
+		  }
+		  .responsive-table .col {
+		    flex-basis: 100%;
+		  }
+		  .responsive-table .col {
+		    display: flex;
+		    padding: 10px 0;
+		  }
+		  .responsive-table .col:before {
+		    color: #6C7A89;
+		    padding-right: 10px;
+		    content: attr(data-label);
+		    flex-basis: 50%;
+		    text-align: right;
+		  }
+		}
+		.tableheading
+		{
+			margin-left:2.6rem;
+		}
+		.tableheadingh1
+		{
+			padding-bottom:1rem;
+		}
+		.actionbutton
+		{
+			border:none;
+			background: transparent;
+		}
 	</style>
 	</head>
-	<body>
+	<body onload="checkValidity()">
 		<!-- header which contains top nav -->
 		<header id="header" class="d-flex align-items-center">
 			<div class="container d-flex justify-content-between align-items-center">
@@ -582,7 +649,18 @@
         		<form method="post" class="formclass" autocomplete="off">{% csrf_token %}
 					{{ form.as_p}}
 					<div class="formbuttons">
-						<input type="submit" name="submit" value="Submit" onclick="hideForm()"/>
+						<input type="submit" name="submit" id="addSubmit"value="Submit" onclick="hideForm()"/>
+						<button type="button" id="cancelbutton" onclick="hideForm(this.parentNode.parentNode.parentNode.id)">Cancel</button>
+					</div>
+					
+				</form>
+        	</div>
+        	<div class="formpopup" id="editformpopup_div">
+        		<div class="colorclass">Update Schedule</div>
+        		<form method="post"  class="formclass" autocomplete="off">{% csrf_token %}
+					{{ form.as_p }}
+					<div class="formbuttons">
+						<input type="submit" name="submit" id="editSubmit" value="Submit" onclick="hideForm()"/>
 						<button type="button" id="cancelbutton" onclick="hideForm(this.parentNode.parentNode.parentNode.id)">Cancel</button>
 					</div>
 					
@@ -592,7 +670,35 @@
 		<div class="col-sm-14 tasks">
 		    <div class="task-list">
 		        <h1 class="tableheadingh1"><span class="tableheading">Schedules</span><span><button type="button" id="add_passwords" onclick="showForm('formpopup_div')">+Add Schedule</button></span></h1>
-				
+				<div class="container tabular-password">
+				  <ul class="responsive-table">
+				    <li class="table-header">
+				      <div class="col col-1">Event Title</div>
+				      <div class="col col-2">Event Category</div>
+				      <div class="col col-3">Start</div>
+				      <div class="col col-4">End</div>
+				      <div id="problematic_columnheader" class="col col-5">Action</div>
+				    </li>
+				    {% for item in currentSchedule%}
+					    <li class="table-row">
+					      <div class="col col-1" data-label="Job Id">{{item.eventName}}</div>
+					      <div class="col col-2" data-label="Customer Name">{{item.eventType}}</div>
+					      <div class="col col-3" data-label="Amount">{{item.eventStart}}</div>
+					      <div class="col col-4" data-label="Amount">{{item.eventEnd}}</div>
+					      <div class="col col-5" data-label="Payment Status">
+					      	<div class="buttonclass">
+			            	<button onclick ="deleteItem(this.id)"class="deleteLinks actionbutton" id="{{item.id}}d">
+			            		<i class="fa fa-trash" aria-hidden="true"></i>
+			            	</button>
+				            <button onclick="editItem(this.id)"class="editLinks actionbutton"id="{{item.id}}e">
+				            	<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+				            </button>
+		            		</div>
+					      </div>
+					    </li>
+				    {% endfor %}
+				  </ul>
+			</div>
 		        <div class="clearfix"></div>        
 		    </div>      
 		</div>
@@ -601,6 +707,63 @@
 	</body>
 </html>
 <script>
+	function deleteItem(scheduleID)
+	{
+		console.log(scheduleID);
+		actual_scheduleID = scheduleID.slice(0,scheduleID.length-1);
+		console.log(actual_scheduleID);
+		a=document.getElementById(scheduleID);
+		current_task=a.parentNode.parentNode.parentNode;
+		current_task.parentNode.removeChild(current_task);
+		$.getJSON("delete/" + actual_scheduleID, function () {});
+	}
+	function editItem(scheduleID)
+	{
+		showForm('editformpopup_div');
+		console.log(scheduleID);
+		actual_scheduleID = scheduleID.slice(0,scheduleID.length-1);
+		console.log(actual_scheduleID);
+		a=document.getElementById(scheduleID);
+		current_task=a.parentNode.parentNode.parentNode;
+		console.log(current_task);
+		$.getJSON("edit/" + actual_scheduleID, function (items) {
+			items = items[0];
+			console.log(items);
+			fields = items.fields;
+			pk=items.pk;
+			form = document.getElementById('editformpopup_div');
+			li = form.getElementsByTagName("input");
+			li2 = form.getElementsByTagName("select");
+			console.log(li);
+			li[1].value= fields.eventName;
+			var dict = {"Academic":0, "Administrative":1,"Personal":2,"Research":3}
+			li2[0].selectedIndex = dict[fields.eventType];
+		});
+
+	}
+	function checkEnd()
+	{
+		startDate = document.getElementById("id_eventStart");
+		endDate =  document.getElementById("id_eventEnd");
+		console.log(startDate.value);
+		console.log(endDate.value);
+		if(endDate.value<startDate.value)
+		{
+			document.getElementById("warningText").style.color="red";
+		}
+		else
+		{
+			document.getElementById("warningText").style.color="initial";
+
+		}
+	}
+	function checkValidity()
+	{
+		if({{sendAlert}})
+		{
+			alert("Form Submission Error");
+		}
+	}
 	function showForm(formID)
 	{	
 		var div= document.getElementById(formID);

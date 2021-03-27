@@ -6,7 +6,7 @@ class Schedules(models.Model):
 	user = models.ForeignKey(User,on_delete=models.CASCADE)
 	eventName = models.CharField(max_length=255, blank=False)
 	eventStart = models.DateTimeField(blank=False)
-	eventEnd = models.DateTimeField(blank=False,help_text="The end time must be later than the start time.")
+	eventEnd = models.DateTimeField(blank=False,help_text="<br><p ><ul><li id='warningText'>The end time must be later than the start time.</ul></li><p>")
 	eventTypes_list = (('Academic','Academic'),('Administrative', 'Administrative'),('Personal','Personal'),('Research','Research'))
 	eventType = models.CharField(max_length=255,choices=eventTypes_list,default='Academic')
 
