@@ -18,7 +18,7 @@ from todolist.views import CreateToDoListView, taskJson, deleteJson, markItemAsC
 from issues.views import IssueView, issuesJson, deleteIssue, editIssue
 from issues.views import IssueView
 from passwords.views import PasswordView, deletePassword, updatePassword
-from schedules.views import ScheduleView
+from schedules.views import ScheduleView, deleteSchedule, editSchedule
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -47,6 +47,8 @@ urlpatterns = [
     path('passwords/update/<int:password>',updatePassword,name='updatePassword'),
 
     path('schedules/',ScheduleView.as_view()),
+    path('schedules/delete/<int:schedule>',deleteSchedule,name='deleteSchedule'),
+    path('schedules/edit/<int:schedule>',editSchedule,name='editSchedule'),
 
 ]
 
