@@ -620,7 +620,12 @@
 					<p>{{bill.billType}}</p>
 					<p>{{bill.money}}</p>
 				{%endfor%}
-				
+				{% for dict in result %}
+					<p>{% if dict.month == month %}
+						<span>{{dict.billType}} {{dict.total_bill}}</span>
+						{% endif %}
+					</p>		
+				{% endfor %}
 		   	</details>
 		   {%endfor%}
 	</body>
