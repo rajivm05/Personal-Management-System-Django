@@ -20,6 +20,9 @@ class BillsView(TemplateView):
 			context={}
 			monthly_details,result= self.monthlyDetails(request)
 			context['monthlyDetails']= monthly_details
+			result= preprocessMonth(result)
+			print("Final ",result)
+			context['result']=result
 			form = BillsForm
 			print(context)
 			context['form'] = form
@@ -89,7 +92,13 @@ def editBill(request,bill):
 		return JsonResponse(jsonitems,safe=False)
 	else:
 		return redirect(settings.LOGIN_REDIRECT_URL)
-
+def preprocessMonth(resultSet):
+	month_int = {1:"January",2:"February",3:"March",4:"April",
+				5:"May",6:"June",7:"July",8:"August",9:"September",
+				10:"October",11:"November",12:"December"}
+	for d in resultSet:
+		d['month']= month_int[int(d['month'][0:2])]+d['month'][2:]
+	return resultSet
 
 
 
