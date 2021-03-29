@@ -33,6 +33,11 @@ class BillsView(TemplateView):
 		if request.user.is_authenticated:
 			form = BillsForm(request.POST)
 			context={}
+			monthly_details,result= self.monthlyDetails(request)
+			context['monthlyDetails']= monthly_details
+			result= preprocessMonth(result)
+			print("Final ",result)
+			context['result']=result
 			if form.is_valid():
 				date = request.POST.get('date')
 				date = datetime.strptime(date, '%m/%d/%Y')
@@ -56,7 +61,8 @@ class BillsView(TemplateView):
 	def monthlyDetails(self,request):
 		print("Hello")
 		if self.request.user.is_authenticated:
-			muskaan = Bills.objects.extra(select={'month': 'strftime("%m",date)','day':'strftime("%d",date)'},order_by=['month','day'])
+			muskaan = Bills.objects.extra(select={'month': 'strftime("%m",date)','day':'strftime("%d",date)', 'year':'strftime("%Y",date)'},order_by=['year','month','day'])
+			print("\n\n",muskaan,"\n\n")
 			month_dict={}
 			for musk in muskaan:
 				if str(musk.date.strftime("%B %Y")) in month_dict.keys():
