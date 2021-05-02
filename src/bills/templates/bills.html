@@ -49,7 +49,10 @@
             {
             	padding-left:115px !important;
             }
-
+            .main-menu .fa
+            {
+            	vertical-align:middle!important;
+            }
 		</style>
 		<!-- CSS for side nav -->
 		<style>
@@ -65,7 +68,6 @@
             width: 60px;
             height: 36px;
             text-align: center;
-            vertical-align: middle;
             font-size:20px;
         }
         .main-menu:hover,nav.main-menu.expanded 
@@ -211,18 +213,84 @@
 		}
 
 		.page-todo .priority.high {
-		    background: #f86c6b;
+		    /*background: #f86c6b;*/
 		    margin-bottom: 1px
 		}
 
 		.page-todo .priority.high span {
-		    background: #f86c6b;
+		    /*background: #f86c6b;*/
 		    padding: 2px 10px;
 		    color: #fff;
 		    display: inline-block;
 		    font-size: 15px;
 		}
+		.page-todo .task {
+		    border-bottom: 1px solid #e4e5e6;
+		    margin-bottom: 1px;
+		    position: relative
 
+		}
+
+		.page-todo .task .desc {
+		    display: inline-block;
+		    width: 75%;
+		    padding: 5px 10px;
+		    font-size: 14px
+		}
+
+		.page-todo .task .desc .title {
+		    font-size: 18px;
+		    margin-bottom: 5px
+		}
+
+		.page-todo .task .time {
+		    display: inline-block;
+		    width: 15%;
+		    padding: 10px 10px 10px 0;
+		    font-size: 12px;
+		    text-align: right;
+		    position: absolute;
+		    top: 0;
+		    right: 0
+		}
+
+		.page-todo .task .time .date {
+		    font-size: 18px;
+		    margin-bottom: 5px
+		}
+
+		.page-todo .task.last {
+		    border-bottom: 1px solid transparent
+		}
+
+		.page-todo .task.high {
+		    border-left: 2px solid #454545!important;
+		}
+
+		.Monthly{
+			background: #f86c6b;
+		}
+
+		.Personal_head {
+			background: #ff97b7;
+		}
+
+		.Food_head {
+			background: #4895ef;
+		}
+
+		.Entertainment_head {
+			background: #4dbd74;
+		}
+
+		.Domestic_head{
+			background: #75cfb8;
+		}
+
+		.Travels_head{
+			background: #b7657b;
+		}
+		
 		.page-todo .priority.medium {
 		    background: #ff97b7;
 		    margin-bottom: 1px
@@ -470,6 +538,212 @@
 			align-items: center;
 			justify-content: center;
 		}
+		.tableheadingh1
+		{
+			padding-bottom:0.6rem;
+		}
+		#add_passwords
+		{
+			float: right;
+			margin-right: 12px;
+			font-family: "Raleway", sans-serif;
+		  font-weight: 500;
+		  font-size: 18px;
+		  letter-spacing: 1px;
+		  /*padding: 12px 32px;*/
+		  border-radius: 50px;
+		  transition: 0.5s;
+		  /*margin: 10px;*/
+		  color: #fff;
+		  -webkit-animation-delay: 0.8s;
+		  animation-delay: 0.8s;
+		  background: rgba(149,179,171,0.8);
+		  border:none;
+		  padding:5px;
+		}
+		#add_passwords:hover {
+			background: transparent;
+		  color: rgba(149,179,171);
+		  text-decoration: none;
+		  border: 1px solid rgba(149,179,171,0.8);;
+		}
+		.responsive-table
+		{
+			padding-left:0px;
+		}
+		.responsive-table li {
+		  border-radius: 3px;
+		  padding: 0px 25px;
+		  display: flex;
+		  justify-content: space-between;
+		  margin-bottom: 15px;
+		  min-height:4%;
+		}
+		.responsive-table .table-header {
+		  background-color: rgb(149,179,171);
+		  font-size: 14px;
+		  text-transform: uppercase;
+		  letter-spacing: 0.03em;
+		}
+		.responsive-table .table-row {
+		  background-color: #ffffff;
+		  height: 4.2%;
+		  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+		}
+		.responsive-table .col
+		{
+			height: 4%;
+		}
+		.responsive-table .col-1 {
+		  flex-basis: 35%;
+		}
+		.responsive-table .col-2 {
+		  flex-basis: 20%;
+		}
+		.responsive-table .col-3 {
+		  flex-basis: 25%;
+		}
+		.responsive-table .col-4 {
+		  flex-basis: 20%;
+		}
+		@media all and (max-width: 767px) {
+		  .responsive-table .table-header {
+		    display: none;
+		  }
+		  .responsive-table li {
+		    display: block;
+		  }
+		  .responsive-table .col {
+		    flex-basis: 100%;
+		  }
+		  .responsive-table .col {
+		    display: flex;
+		    padding: 10px 0;
+		  }
+		  .responsive-table .col:before {
+		    color: #6C7A89;
+		    padding-right: 10px;
+		    content: attr(data-label);
+		    flex-basis: 50%;
+		    text-align: right;
+		  }
+		}
+		.buttonclass
+		{
+			width: 60%;
+			float: right;
+			position: bottom;
+			display: inline-block;
+		}
+		.buttonclass i
+		{
+			width:4px;
+		}
+		.buttonclass a
+		{
+			padding-right:6px;
+			padding-left:6px;
+		}
+		.deleteLinks
+		{
+			color:#fa1e0e;
+		}
+		.deletelinks a
+		{
+			margin-bottom:20px !important;
+		}
+		.editLinks
+		{
+			color:#5388b4;
+		}
+		.actionbutton
+		{
+			border:none;
+			background: transparent;
+		}
+		.priority
+		{
+			margin-bottom:25px !important;
+		}
+		#monthly_alternative
+		{
+			display: none;
+		}
+	</style>
+	<!-- Monthly View-->
+	<style>
+		details[open] summary ~ * {
+		  animation: open 0.3s ease-in-out;
+		}
+		details[open] summary
+		{
+		  background-color:rgb(149,179,171);
+		}
+
+		@keyframes open {
+		  0% {
+		    opacity: 0;
+		  }
+		  100% {
+		    opacity: 1;
+		  }
+		}
+		details summary::-webkit-details-marker {
+		  display: none;
+		}
+
+		details summary {
+		  width: 100%;
+		  padding: 0.5rem 0;
+		  border-top: 1px solid black;
+		  position: relative;
+		  cursor: pointer;
+		  font-size: 1.15rem;
+		  font-weight: 300;
+		  list-style: none;
+		  padding-left: 5px;
+		  margin-right: 5px;
+		}
+
+		details summary:after {
+		  content: "+";
+		  padding-right: 5px;
+		  color: black;
+		  position: absolute;
+		  font-size: 1.75rem;
+		  line-height: 0;
+		  margin-top: 0.75rem;
+		  right: 0;
+		  font-weight: 200;
+		  transform-origin: center;
+		  transition: 200ms linear;
+		}
+		details[open] summary:after {
+		  transform: rotate(45deg);
+		  font-size: 2rem;
+		}
+		details summary {
+		  outline: 0;
+		}
+		details p {
+		  font-size: 0.95rem;
+		  margin: 0 0 1rem;
+		  padding-top: 1rem;
+		}
+		.moneyDesc
+		{
+			font-size:1rem;
+		}
+		.monthlyViewSummary
+		{
+			text-align:center;
+			padding:5px;
+			border-left: 2px solid #454545;
+		}
+		.monthlyViewSummary .totalAmountClass
+		{
+			padding-top:5px;
+		}
 	</style>
 	</head>
 	<body>
@@ -518,7 +792,7 @@
                     
                 </li>
                 <li class="has-subnav">
-                    <a href="#">
+                    <a href="/schedules">
                        <i class="fa fa-calendar fa-2x"></i>
                         <span class="nav-text">
                             Schedule
@@ -534,7 +808,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/bills">
                         <i class="fa fa-credit-card fa-2x"></i>
                         <span class="nav-text">
                             Bills and Payments
@@ -542,7 +816,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/issues">
                         <i class="fa fa-exclamation fa-2x"></i>
                         <span class="nav-text">
                            Issues
@@ -592,12 +866,12 @@
         		<form method="post" class="formclass" autocomplete="off">{% csrf_token %}
 					{{ form.as_p}}
 					<div class="formbuttons">
-						<input type="submit" name="submit" value="Submit" onclick="hideForm()"/>
-						<button type="button" id="cancelbutton" onclick="hideForm()">Cancel</button>
+						<input type="submit" name="submit" value="Submit" onclick="hideForm('formpopup_div')"/>
+						<button type="button" id="cancelbutton" onclick="hideForm('formpopup_div')">Cancel</button>
 					</div>
 				</form>
         	</div>
-        	<div class="formpopup editform" id="editformpopup_div">
+        	<!-- <div class="formpopup editform" id="editformpopup_div">
         		<div class="colorclass">Update Bill</div>
         		<form method="get" class="formclass editformclass" autocomplete="off">
 					{{ form.as_p}}
@@ -606,49 +880,164 @@
 						<button type="button" id="cancelbutton" onclick="hideForm()">Cancel</button>
 					</div>
 				</form>
-        	</div>
-        <div class="container bigcontainer page-todo bootstrap snippets bootdeys" id="bigcontainer_div">
-		<div class="col-sm-14 tasks">
-		    <div class="task-list">
-		        <h1>Current Bills & Payments</h1>
-		        <div class="priority high"><span>Academic</span><span class="addtask"><button id="academic_add" onclick="showForm(this.id)">+Add Task</button></span></div>
-		   {%for month, details in monthlyDetails.items %}
-		   	<details id={{month}}>
-		   		<summary>{{month}}</summary>
-		   		{% for bill in details%}
-					<p>{{bill.billDescription}}</p>
-					<p>{{bill.billType}}</p>
-					<p>{{bill.money}}</p>
-				{%endfor%}
-				{% for dict in result %}
-					<p>{% if dict.month == month %}
-						<span>{{dict.billType}} {{dict.total_bill}}</span>
-						{% endif %}
-					</p>		
-				{% endfor %}
-		   	</details>
-		   {%endfor%}
+        	</div> -->
+	        <div class="container bigcontainer page-todo bootstrap snippets bootdeys" id="bigcontainer_div">
+				<div class="col-sm-14 tasks">
+				    <div class="task-list">
+				        <h1 class="tableheadingh1">
+				        	<span class="tableheading">Bills & Payments</span>
+				        	<span>
+				        		<!-- <input type="combobox" id="add_passwords" onclick="showForm('formpopup_div')"></input> -->
+				        		<select id="add_passwords" onchange="viewType()">
+				        			<option value="Categorical View">Categorical View</option>
+				        			<option value="Monthly View">Monthly View</option>
+				        		</select>
+				        	</span>
+				        </h1>
+				        <div id="categorical_alternative">
+					        {% for category,bills in cat_bill.items%}
+					        	<div class="priority high {{category}}_head"><span>{{category}}</span><span class="addtask"><button id="{{category}}_add" onclick="showForm('formpopup_div',this.id)">+Add Bill</button></span></div>
+					        		<div class="container tabular-password">
+					  					<ul class="responsive-table">
+							        		{%for bill in bills%}
+											    <li class="table-row">
+											      <div class="col col-1" data-label="Job Id">{{bill.billDescription}}</div>
+											      <div class="col col-2" data-label="Customer Name">{{bill.date}}</div>
+											      <div class="col col-3" data-label="Amount"><span><i class="fa fa-rupee" style="font-size:inherit; width:12px; vertical-align:initial;"></i>{{bill.money}}</span></div>
+											      <div class="col col-4" data-label="Payment Status">
+											      	<div class="buttonclass">
+										            	<button onclick ="deleteItem(this.id)"class="deleteLinks actionbutton" id="{{bill.id}}cd">
+										            		<i class="fa fa-trash" aria-hidden="true"></i>
+										            	</button>
+											            <button onclick="editForm(this.id)"class="editLinks actionbutton"id="{{bill.id}}ce">
+											            	<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+											            </button>
+								            		</div>
+											      </div>
+											    </li>
+							        		{%endfor%}
+					        			</ul>
+					        		</div>
+					        {%endfor%}
+					    </div>
+					    <div id="monthly_alternative">
+					    	{%for month, details in monthlyDetails.items %}
+						   	<details id={{month}}>
+						   		<summary>{{month}}</summary>
+						   		<!-- {% for bill in details%}
+									<p>{{bill.billDescription}}</p>
+									<p>{{bill.billType}}</p>
+									<p>{{bill.money}}</p>
+								{%endfor%}
+								{% for dict in result %}
+									<p>{% if dict.month == month %}
+										<span>{{dict.billType}} {{dict.total_bill}}</span>
+										{% endif %}
+									</p>		
+								{% endfor %} -->
+								{% for bill in details %}
+						        <div class="task high">
+						            <div class="desc">
+				                		<div class="title">{{bill.billDescription}}</div>
+						                <div class="moneyDesc"><span><i class="fa fa-rupee" style="font-size:inherit; width:12px; vertical-align:initial;"></i>{{bill.money}}</span></div>
+						                <div class="billCategory">
+						                	{{bill.billType}}
+						                </div>
+						            </div>
+						            <div class="time">
+						                <div class="date">{{bill.date|date}}</div>
+						                <div class="buttonclass">
+							            	<a href="/bills" onclick ="deleteItem(this.id)"class="deleteLinks" id="{{bill.id}}md"><i class="fa fa-trash" aria-hidden="true"></i></a>
+							            	<a href="#" onclick="editForm(this.id)" class="editLinks"id="{{bill.id}}me"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+						            	</div>
+						            </div>
+						        </div>
+								{% endfor %}
+								<div class="monthlyViewSummary">
+									<h4>Monthly Summary</h4>
+									{%for totalSummary in result%}
+										{%if totalSummary.month == month%}
+											<span><b>{{totalSummary.billType}}:</b> <i class="fa fa-rupee" style="font-size:inherit; width:12px; vertical-align:initial;"></i>{{totalSummary.total_bill}}</span><br>
+										{%endif%}
+									{% endfor %}
+									{%for totalBillPerMonth in result_monthTotal%}
+										{%if totalBillPerMonth.month == month%}
+											<span><h4 class="totalAmountClass">Total Expenditure: </h4><i class="fa fa-rupee" style="font-size:inherit; width:12px; vertical-align:initial;"></i>{{totalBillPerMonth.monthlyBill}}</span>
+										{%endif%}
+									{%endfor%}
+								</div>
+						   	</details>
+						   {%endfor%}
+					    </div>
+		        		<div class="clearfix"></div>        
+				    </div>
+				</div>
+			</div>
+		</div>	
+
 	</body>
 </html>
 
   
   <script type="text/javascript">
-	function hideForm()
+  	function viewType()
+  	{
+  		selectInput = document.getElementById("add_passwords");
+  		if (selectInput.value=="Categorical View")
+  		{
+  			document.getElementById("monthly_alternative").style.display="none";
+  			document.getElementById("categorical_alternative").style.display="block";
+  		}
+  		else
+  		{
+  			document.getElementById("monthly_alternative").style.display="block";
+  			document.getElementById("categorical_alternative").style.display="none";	
+  		}
+  	}
+	function hideForm(formID)
 	{
-		var div= document.getElementById("formpopup_div");
+		var div= document.getElementById(formID);
 		div.style.display="none";
 
-		var div= document.getElementById("editformpopup_div");
-		div.style.display="none";
-		
 		var bigcontainer = document.getElementById("bigcontainer_div");
 		bigcontainer.style.opacity=1;
 	}
-	function showForm(buttonID)
-	{	
-		var div= document.getElementById("formpopup_div");
-		console.log(div);
-		div.style.display="block";
+	function showForm(formID, taskID="none")
+	{
+		if (taskID=="none")
+		{
+			document.getElementById(formID).style.display="block";
+		}
+		else
+		{
+			form=document.getElementById(formID);
+			form.style.display="block"
+			select = form.getElementsByTagName("select")[0];
+			if(taskID =="Monthly Payment_add")
+			{	
+				select.selectedIndex=0;s
+			}
+			else if (taskID == "Personal_add")
+			{
+				select.selectedIndex=1;
+			}
+			else if (taskID == "Food_add")
+			{
+				select.selectedIndex=4;
+			}
+			else if (taskID == "Domestic_add")
+			{
+				select.selectedIndex=2;
+			}
+			else if (taskID == "Entertainment_add")
+			{
+				select.selectedIndex=5;
+			}
+			else if (taskID == "Travels_add")
+			{
+				select.selectedIndex=3;
+			}
+		}
 		var bigcontainer = document.getElementById("bigcontainer_div");
 		bigcontainer.style.opacity=0.4;
 	}
@@ -671,7 +1060,7 @@
 	function deleteItem(billID)
 	{
 		console.log(billID);
-		actual_billID = billID.slice(0,billID.length-1);
+		actual_billID = billID.slice(0,billID.length-2);
 		console.log(actual_billID);
 		a=document.getElementById(billID);
 		current_bill=a.parentNode.parentNode.parentNode;
@@ -680,7 +1069,7 @@
 	}
 	function editForm(billID)
 	{	
-		actual_billID = billID.slice(0,billID.length-1);
+		actual_billID = billID.slice(0,1);
 		$.getJSON("edit/" + actual_billID, function (items) {
 			var div= document.getElementById("editformpopup_div");
 			var form=div.childNodes[3];

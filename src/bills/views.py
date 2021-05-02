@@ -18,14 +18,19 @@ class BillsView(TemplateView):
 	def get(self, request):
 		if request.user.is_authenticated:
 			context={}
-			monthly_details,result= self.monthlyDetails(request)
+			monthly_details,result,result_monthTotal= self.monthlyDetails(request)
 			context['monthlyDetails']= monthly_details
 			result= preprocessMonth(result)
+			result_monthTotal= preprocessMonth(result_monthTotal)
 			print("Final ",result)
 			context['result']=result
+			context['result_monthTotal']= result_monthTotal
 			form = BillsForm
+			print("\n\n\n---------",result_monthTotal,"-----------\n\n\n")
 			print(context)
 			context['form'] = form
+			cat_bill = getCategoricalBills(request)
+			context['cat_bill']= cat_bill
 			return render(request,'bills.html',context)
 		else:
 			return redirect(settings.LOGIN_REDIRECT_URL)
@@ -33,11 +38,6 @@ class BillsView(TemplateView):
 		if request.user.is_authenticated:
 			form = BillsForm(request.POST)
 			context={}
-			monthly_details,result= self.monthlyDetails(request)
-			context['monthlyDetails']= monthly_details
-			result= preprocessMonth(result)
-			print("Final ",result)
-			context['result']=result
 			if form.is_valid():
 				date = request.POST.get('date')
 				date = datetime.strptime(date, '%m/%d/%Y')
@@ -51,10 +51,18 @@ class BillsView(TemplateView):
 					billDescription=billDescription,
 					billType=billType)
 				bill.save()
+				monthly_details,result,result_monthTotal= self.monthlyDetails(request)
+				context['monthlyDetails']= monthly_details
+				result= preprocessMonth(result)
+				result_monthTotal = preprocessMonth(result_monthTotal)
+				context['result']=result
+				context['result_monthTotal']= result_monthTotal
+				print("\n\n\n",result_monthTotal,"\n\n\n")
 				form = BillsForm()
 				context['form']=form
-				return  render(request,'bills.html',context)
-			else:
+				cat_bill = getCategoricalBills(request)
+				
+				context['cat_bill']= cat_bill
 				return  render(request,'bills.html',context)
 		else:
 			return redirect(settings.LOGIN_REDIRECT_URL)
@@ -71,8 +79,8 @@ class BillsView(TemplateView):
 					month_dict[str(musk.date.strftime("%B %Y"))]=[musk]
 			muskaan = Bills.objects.extra(select={'month': 'strftime("%m %Y",date)','day':'strftime("%d",date)'},order_by=['month','day'])
 			result = muskaan.values('billType','month').order_by('month','billType').annotate(total_bill=Sum('money'))
-			print(result)
-			return month_dict,result
+			result_monthTotal = muskaan.values('month').order_by('month').annotate(monthlyBill=Sum('money'))
+			return month_dict,result,result_monthTotal
 		else:
 			redirect (settings.LOGIN_REDIRECT_URL)
 
@@ -105,6 +113,17 @@ def preprocessMonth(resultSet):
 	for d in resultSet:
 		d['month']= month_int[int(d['month'][0:2])]+d['month'][2:]
 	return resultSet
+
+def getCategoricalBills(request):
+	if request.user.is_authenticated:
+		categories = ['Monthly Payments','Personal','Food','Entertainment','Domestic','Travels']
+		cat_bill={}
+		for category in categories:
+			# print(Bills.objects.filter(user=request.user,billType=category))
+			cat_bill[category]=Bills.objects.filter(user=request.user,billType=category)
+		return cat_bill
+	else: 
+		return redirect(settings.LOGIN_REDIRECT_URL)
 
 
 

@@ -19,7 +19,7 @@ from issues.views import IssueView, issuesJson, deleteIssue, editIssue
 from issues.views import IssueView
 from passwords.views import PasswordView, deletePassword, updatePassword
 from schedules.views import ScheduleView
-from bills.views import BillsView
+from bills.views import BillsView, deleteBill
 from schedules.views import ScheduleView, deleteSchedule, editSchedule
 
 urlpatterns = [
@@ -53,6 +53,8 @@ urlpatterns = [
     path('schedules/edit/<int:schedule>',editSchedule,name='editSchedule'),
 
     path('bills/',BillsView.as_view()),
+    path('bills/delete/<int:bill>',deleteBill,name='deleteBill'),
+
    
 
 ]

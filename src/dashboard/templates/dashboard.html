@@ -10,7 +10,61 @@
     <script src="{% static 'vendor/popper/popper.min.js' %}"></script>
     <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
-    <style>
+    <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+        <title>Dashboard</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+        <!-- Favicons -->
+        <!-- <link href="{% static 'assets/img/favicon.png'%}" rel="icon"> -->
+        <!-- <link href="{% static 'assets/img/apple-touch-icon.png'%}" rel="apple-touch-icon"> -->
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+        <!-- Vendor CSS Files -->
+        <link href="{% static 'assets/vendor/animate.css/animate.min.css'%}" rel="stylesheet">
+        <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+        <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
+        <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css'%}" rel="stylesheet">
+        <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet">
+        <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet">
+        <!-- New nav files -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- <link rel="stylesheet" href="{% static 'nav_assets/css/style.css'%}"> -->
+        <!-- Template Main CSS File -->
+        <link href="{% static 'assets/css/style.css''%}" rel="stylesheet">
+        
+        <!-- CSS for Top nav -->
+        <style type="text/css">
+            @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+            .welcomeback
+            {
+                font-size:20px !important;
+                margin-right: 0px;
+            }
+            .fa-2x {
+                font-size: 1em !important;
+                padding-right:3px !important;
+            }
+            .welcomeback
+            {
+                color:#545454 !important;
+            }
+            #problematic_columnheader
+            {
+                padding-left:7.6rem !important;
+            }
+        </style>
+        <!-- CSS for side nav -->
+        <style>
         @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
         }
             @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
@@ -26,14 +80,11 @@
             vertical-align: middle;
             font-size:20px;
         }
-
-
         .main-menu:hover,nav.main-menu.expanded 
         {
-            width:250px;
+            width:220px;
             overflow:visible;
         }
-
         .main-menu 
         {
             background:#212121;
@@ -43,26 +94,23 @@
             bottom:0;
             height:100%;
             left:0;
-            width:60px;
-            overflow:hidden;
+            width:220px;
+            /*overflow:hidden;*/
             -webkit-transition:width .05s linear;
             transition:width .05s linear;
             -webkit-transform:translateZ(0) scale(1,1);
             z-index:1000;
         }
-
         .main-menu>ul 
         {
             margin:7px 0;
         }
-
         .main-menu li 
         {
             position:relative;
             display:block;
-            width:250px;
+            width:220px;
         }
-
         .main-menu li>a 
         {
             position:relative;
@@ -75,10 +123,8 @@
             text-decoration:none;
             -webkit-transform:translateZ(0) scale(1,1);
             -webkit-transition:all .1s linear;
-            transition:all .1s linear;
-              
+            transition:all .1s linear;     
         }
-
         .main-menu .nav-icon 
         {
             position:relative;
@@ -89,7 +135,6 @@
             vertical-align:middle;
             font-size:18px;
         }
-
         .main-menu .nav-text 
         {
             position:relative;
@@ -98,30 +143,25 @@
             width:190px;
             font-family: 'Titillium Web', sans-serif;
         }
-
         .main-menu>ul.logout 
         {
             position:absolute;
             left:0;
             bottom:0;
         }
-
         .no-touch .scrollable.hover 
         {
             overflow-y:hidden;
         }
-
         .no-touch .scrollable.hover:hover 
         {
             overflow-y:auto;
             overflow:visible;
         }
-
         a:hover,a:focus 
         {
             text-decoration:none;
         }
-
         nav 
         {
             -webkit-user-select:none;
@@ -129,8 +169,8 @@
             -ms-user-select:none;
             -o-user-select:none;
             user-select:none;
+            /*height:100%;*/
         }
-
         nav ul,nav li 
         {
             outline:0;
@@ -155,14 +195,142 @@
             font-weight: 300;
             src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
         }
-        
-    </style>
+        .mainmenu-icon
+        {
+            width:40%;
+            margin-left:28%;
+            margin-top:28px;
+            margin-bottom:10px;
+        }
+        .maincontent
+        {
+            margin-top:1.5rem;
+        }
+        .page-todo .tasks 
+        {
+            background: #fff;
+            padding: 0;
+            border-right: 1px solid #d1d4d7;
+            margin: -30px -15px -30px -15px
+        }
+        .page-todo .task-list {
+            padding: 30px 15px;
+            min-height: 100%
+        }
+        .page-todo .graph {
+            height: 100%
+        }  
+        .bigcontainer
+        {
+            overflow-y: scroll;
+            max-height:85%;
+        }
+        .container
+        {
+            max-width:1460px!important;
+            margin-left:15rem!important;
+        }
+        .somecontent
+        {
+            border: 2px solid #000000;
+        }
+        .completeVsIncompleteTasks
+        {
+            display: inline-block;
+            width: 48%;
+            height: 50%;
+            /*box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);*/
+            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
+
+        }
+        .topTasksToDo
+        {
+            display: inline-block;
+            min-height: 40%;
+            max-height: 50%;
+            /*overflow-y: scroll;*/
+            width: 30%;
+            margin-left:5%;
+            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
+            padding:5px;
+
+        }
+        .topTasksToDo h3
+        {
+            text-align: center;
+        }
+        .billsPerMonth
+        {
+            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
+            margin-top:3rem;
+            margin-right:5rem;
+            width:45%;
+            display: inline-block;
+            /*border-bottom: 1px solid rgba(0, 0, 0);*/
+            height:50%;
+        }
+        .billsPerCategory
+        {
+            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
+            margin-top:3rem;
+            width:45%;
+            display: inline-block;
+            height:50%;
+        }
+        .taskItem
+        {
+            margin:4px;
+            min-height:5%;
+            padding:5px;
+        }
+        .Academic
+        {
+            border-left: 5px solid #f86c6b;
+        }
+        .Personal
+        {
+            border-left: 5px solid #ff97b7;
+        }
+        .Research
+        {
+            border-left: 5px solid #4895ef;
+        }
+        .Administrative
+        {
+            border-left: 5px solid #4dbd74
+        }
+        .firstContainer 
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .secondContainer
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        </style>
+        <!-- main content style -->
 </head>
 <body>
-    <div class="area">
-        <h1>Hello  sh sjdh jsh djhs djhs djh djhs djhs djhs djh sjdh sjdh sjdh sjh </h1>    
-    </div>
-    <nav class="main-menu">
+    <!-- header which contains top nav -->
+        <header id="header" class="d-flex align-items-center">
+            <div class="container d-flex justify-content-between align-items-center">
+                <div class="logo">
+                    <h1>
+                        <a id="problematic_a" href="/">Personal Management System</a>
+                    </h1>
+                </div>
+                <div id="navbar_div" class="navbar_div">
+                    <a class="welcomeback" href="/"><i class="fa fa-user fa-2x" aria-hidden="true"></i>Welcome back {{request.user.username|title}}!</a>
+                </div>
+            </div>
+        </header>
+        <!-- Side navbar -->
+        <nav class="main-menu">
+            <img class="mainmenu-icon" src="{% static 'mainmenulogo.png'%}"  alt=""></img>
             <ul>
                 <li>
                     <a href="/">
@@ -192,14 +360,12 @@
                     
                 </li>
                 <li class="has-subnav">
-                    <a href="#">
+                    <a href="/schedules">
                        <i class="fa fa-calendar fa-2x"></i>
                         <span class="nav-text">
                             Schedule
                         </span>
                     </a>
-                    
-                    
                 </li>
                 <li class="has-subnav">
                     <a href="/passwords">
@@ -208,10 +374,9 @@
                             Passwords
                         </span>
                     </a>
-                   
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/bills">
                         <i class="fa fa-credit-card fa-2x"></i>
                         <span class="nav-text">
                             Bills and Payments
@@ -219,7 +384,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/issues">
                         <i class="fa fa-exclamation fa-2x"></i>
                         <span class="nav-text">
                            Issues
@@ -249,9 +414,8 @@
                             Change Email
                         </span>
                     </a>
-                </li>
+                </li> 
             </ul>
-
             <ul class="logout">
                 <li>
                    <a href="{% url 'accounts:log_out' %}">
@@ -263,5 +427,50 @@
                 </li>  
             </ul>
         </nav>
+        <div class="maincontent">
+            <div class="container bigcontainer page-todo bootstrap snippets bootdeys" id="bigcontainer_div">
+                <div class="firstContainer">
+                    <div class="completeVsIncompleteTasks">{{completeVsIncompleteTasks|safe}}</div>
+                    <div class="topTasksToDo">
+                        <h3> Upcoming Tasks</h3>
+                        {%for task in topTasksToDo %}
+                            <div class="taskItem {{task.taskType}}">{{task.taskName}}</div>
+                        {%endfor%}
+                    </div>
+                </div>
+                <div class="secondContainer">
+                    <div class="billsPerMonth" id="changingGraphDiv">
+                        <select id="specify_year" onchange="fetchBillForYear(this.id)">
+                            {%for year in years%}
+                            <option value="{{year}}">{{year}}</option>
+                            {%endfor%}
+                        </select>
+                        {{billsPerMonth|safe}}
+                    </div>
+                    <div class="billsPerCategory">
+                        {{expenditurePerCategory|safe}}
+                    </div>
+                </div>
+            </div>            
+        </div>
 </body>
 </html>
+<script type="text/javascript">
+    function fetchBillForYear(selectID)
+    {
+        parent = document.getElementById(selectID).parentNode;
+        div = parent.getElementsByTagName("div")[0];
+        parent.removeChild(div);
+        parent_id = parent.id;
+        var $log = $( "#"+parent_id );
+        console.log(parent_id);
+        year = document.getElementById(selectID).value;
+        url_call = "year/"+year;
+        $.getJSON(url_call, function(items){
+            var new_div = document.createElement("div");
+            new_div.id="graphContainerID";
+            new_div.innerHTML = items.div;
+            $log.append(new_div);
+        });
+    }
+</script>
