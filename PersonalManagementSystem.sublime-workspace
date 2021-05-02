@@ -35,24 +35,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/C/Users/rajiv/Documents/Chrome manifest/manifest.json",
-			"settings":
-			{
-				"buffer_size": 924,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/PersonalManagementSystem/settings.py",
-			"settings":
-			{
-				"buffer_size": 4308,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -104,13 +86,16 @@
 	[
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/dashboard",
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/dashboard/templates",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/PersonalManagementSystem"
 	],
 	"file_history":
 	[
+		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/PersonalManagementSystem/settings.py",
+		"/C/Users/rajiv/Documents/Chrome manifest/manifest.json",
 		"/C/Users/rajiv/Documents/Chrome manifest/background.js",
 		"/C/Users/rajiv/OneDrive/Desktop/trial.html",
-		"/C/Users/rajiv/Documents/Chrome manifest/manifest.json",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/dashboard/urls.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/PersonalManagementSystem/urls.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/accounts/urls.py",
@@ -121,7 +106,6 @@
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/schedules/templates/scheduledisplay.html",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/issues/templates/issues.html",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/bills/templates/bills.html",
-		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/PersonalManagementSystem/settings.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/accounts/views.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/bills/views.py",
 		"/C/Users/rajiv/OneDrive/Desktop/Notes/Sem-6/Software Engineering/Project/Personal-Management-System/src/schedules/models.py",
@@ -376,69 +360,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/C/Users/rajiv/Documents/Chrome manifest/manifest.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 924,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								445,
-								445
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/PersonalManagementSystem/settings.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4308,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3016,
-								3016
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2736.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
